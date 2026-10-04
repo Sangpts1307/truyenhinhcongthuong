@@ -1,0 +1,668 @@
+/* ==========================================================================
+   TRUYỀN HÌNH CÔNG THƯƠNG - AUTHENTIC VIETNAMESE EDITORIAL DESIGN
+   Inspired by: Tuổi Trẻ (tuoitre.vn), truyenhinhcongthuong.vn, Wired.
+   Typography: Arial, Helvetica, sans-serif.
+   Layout:
+   - Clean Header: Logo on left, header-side ad on right (Exact match with media_1791048942914.png)
+   - Full-width horizontal Navigation Bar & Ticker
+   - Side Gutter Banners (Flexbox columns, strictly below ticker, NEVER overlapping content or navbar!)
+   ========================================================================== */
+
+:root {
+  --tvct-red: #be1016;
+  --tvct-red-dark: #990504;
+  --tvct-blue: #1b2e63;
+  --tvct-text: #222222;
+  --tvct-title: #111827;
+  --tvct-muted: #666666;
+  --tvct-border: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--tvct-text);
+  background-color: #f0f2f5; /* Soft light gray background for side gutters */
+  line-height: 1.45;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+a:hover {
+  color: var(--tvct-red);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   SITE LAYOUT WITH SIDE GUTTERS (FLEXBOX - 100% OVERLAP-PROOF)
+   - Left gutter: 135px dedicated column
+   - Main content: 1160px central white sheet
+   - Right gutter: 135px dedicated column
+   - Starts strictly below ticker, sticky below navbar when scrolling!
+   ========================================================================== */
+.site-layout-with-gutters {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 14px 10px;
+}
+
+.site-main-content {
+  flex: 1;
+  max-width: 1160px;
+  min-width: 0;
+  background-color: #ffffff;
+  padding: 18px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.side-gutter-ad {
+  width: 135px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 56px; /* Sits 10px below the 46px sticky navbar when scrolling */
+  z-index: 20;
+}
+
+@media (max-width: 1199px) {
+  .side-gutter-ad {
+    display: none !important;
+  }
+}
+
+/* Header, navbar, and content container */
+.header-container,
+.page-container {
+  width: 100%;
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+/* Aligned container for Logo, Menu, and Tin Nóng (thẳng hàng chuẩn với sheet content bên dưới) */
+.header-inner-aligned {
+  width: 100%;
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (max-width: 1200px) {
+  .header-inner-aligned {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
+/* Ticker Marquee Scroll (Chữ chạy ngang bên phải Tin nóng 24/7 - Tốc độ chậm rãi, êm ái) */
+.ticker-marquee-box {
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+  white-space: nowrap;
+}
+.ticker-marquee-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: tickerMarqueeScroll 85s linear infinite;
+  will-change: transform;
+}
+.ticker-marquee-track:hover {
+  animation-play-state: paused;
+}
+@keyframes tickerMarqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Horizontal single-line navbar (Không xuống dòng, cuộn ngang trên mobile, tràn dropdown trên desktop) */
+.nav-single-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  position: relative;
+}
+.nav-single-line::-webkit-scrollbar {
+  display: none;
+}
+.nav-single-line > * {
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+}
+
+@media (min-width: 1024px) {
+  .nav-single-line {
+    overflow: visible !important;
+  }
+}
+
+/* Tooltip Dark (Chuẩn ảnh 1 media_1791052601435.png) */
+.tooltip-dark {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background-color: #2e3236;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.tooltip-dark::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 4px;
+  border-style: solid;
+  border-color: transparent transparent #2e3236 transparent;
+}
+.group:hover .tooltip-dark {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(6px);
+}
+
+/* Expandable Pill Search Box (Chuẩn ảnh 2 media_1791052612576.png) */
+.header-search-pill {
+  display: flex;
+  align-items: center;
+  border: 1px solid #9ca3af;
+  border-radius: 9999px; /* full rounded pill */
+  padding: 4px 12px;
+  background-color: #ffffff;
+  width: 240px;
+  max-width: 100%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+}
+.header-search-pill:focus-within {
+  border-color: #be1016;
+  box-shadow: 0 0 0 2px rgba(190, 16, 22, 0.15);
+}
+.header-search-pill input {
+  font-style: italic;
+  color: #374151;
+  font-size: 12px;
+}
+.header-search-pill input::placeholder {
+  font-style: italic;
+  color: #888888;
+}
+
+/* Navbar Hover Effect (Chuẩn Image 3 media_1791052672456.png: Dark Tag & Submenu Dropdown) */
+.nav-item-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav-item-wrapper > a {
+  display: block;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-item-wrapper:hover > a {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Dropdown menu container that drops down on hover */
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+}
+
+.nav-item-wrapper:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* The dark tag directly under the hovered item (Exact match with "Thời sự" in Image 3) */
+.nav-dropdown-tag {
+  display: inline-block;
+  background-color: #2e3236;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 2px 2px 0 0;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+/* Little triangle pointer at the top of the tag */
+.nav-dropdown-tag::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 14px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: transparent transparent #2e3236 transparent;
+}
+
+/* The submenu dropdown box */
+.nav-dropdown-content {
+  background-color: #2e3236;
+  min-width: 180px;
+  border-radius: 0 3px 3px 3px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  padding: 6px 0;
+  border-top: 1px solid #43484e;
+}
+
+.nav-dropdown-content a {
+  display: block;
+  padding: 6px 14px;
+  color: #e5e7eb;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
+  transition: background-color 0.15s ease, color 0.15s ease, padding-left 0.15s ease;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #be1016;
+  color: #ffffff;
+  padding-left: 18px;
+}
+
+/* Interactive Modal Backdrop & Card */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-card {
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 520px;
+  width: 100%;
+  overflow: hidden;
+  transform: translateY(-15px) scale(0.98);
+  transition: transform 0.25s ease;
+}
+.modal-overlay.active .modal-card {
+  transform: translateY(0) scale(1);
+}
+
+/* Scroll To Top Button (Chuẩn box vuông mũi tên lên như ảnh mẫu VietnamNet media_1791051895512.png) */
+#scroll-to-top-btn {
+  position: fixed;
+  bottom: 70px;
+  right: 24px;
+  z-index: 999;
+  width: 42px;
+  height: 42px;
+  background-color: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease, background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+#scroll-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+#scroll-to-top-btn:hover {
+  background-color: var(--tvct-red);
+  color: #ffffff;
+  border-color: var(--tvct-red);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(190, 16, 22, 0.25);
+}
+
+/* Section Header Ribbon (Chuẩn truyenhinhcongthuong.vn như ảnh mẫu) */
+.cat-ribbon-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--tvct-red);
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.cat-ribbon-title {
+  display: inline-block;
+  background: var(--tvct-red);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  margin: 0;
+  letter-spacing: 0.03em;
+  position: relative;
+}
+.cat-ribbon-title::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 29px solid var(--tvct-red);
+  border-right: 8px solid transparent;
+}
+
+.cat-ribbon-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #666666;
+  padding-right: 4px;
+}
+.cat-ribbon-links a:hover {
+  color: var(--tvct-red);
+  text-decoration: underline;
+}
+
+/* Video Thumbnail with Play Button Overlay (Ảnh mẫu 1) */
+.video-thumb-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #111111;
+  overflow: hidden;
+}
+.video-thumb-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.video-thumb-frame:hover img {
+  transform: scale(1.04);
+  opacity: 0.92;
+}
+
+.video-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+.video-thumb-frame:hover .video-play-icon {
+  background: var(--tvct-red);
+  border-color: #ffffff;
+  transform: translate(-50%, -50%) scale(1.12);
+}
+
+/* Grid of 4 columns for news */
+.news-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+@media (max-width: 860px) {
+  .news-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .news-grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* News item title */
+.news-title-sm {
+  font-size: 13px;
+  font-weight: bold;
+  color: #111827;
+  line-height: 1.35;
+  margin-top: 6px;
+  margin-bottom: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.news-title-sm:hover,
+a:hover .news-title-sm {
+  color: var(--tvct-red);
+}
+
+/* Bullet item with red triangle (Ảnh mẫu 1) */
+.news-bullet-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.news-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 6px 0;
+  border-bottom: 1px dashed #e5e7eb;
+  font-size: 13px;
+  line-height: 1.35;
+}
+.news-bullet-item:last-child {
+  border-bottom: 0;
+}
+.news-bullet-triangle {
+  color: var(--tvct-red);
+  font-size: 11px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+.news-bullet-link {
+  color: #222222;
+  font-weight: 500;
+}
+.news-bullet-link:hover {
+  color: var(--tvct-red);
+}
+.news-bullet-date {
+  font-size: 11px;
+  color: #888888;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+
+/* Strictly 16:9 YouTube Video Player (Meeting Note 1 - No black borders) */
+.video-responsive-16-9 {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  background-color: #000000;
+}
+.video-responsive-16-9 iframe,
+.video-responsive-16-9 video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+
+/* Dropdown Menu (Smooth, accessible, no clunky boxes) */
+.nav-dropdown-wrapper {
+  position: relative;
+}
+.nav-dropdown-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #ffffff;
+  border-top: 3px solid var(--tvct-red);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 50;
+  padding: 6px 0;
+}
+.nav-dropdown-wrapper:hover .nav-dropdown-panel {
+  display: block;
+}
+.nav-dropdown-item {
+  display: block;
+  padding: 8px 16px;
+  color: #333333;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: none;
+  border-bottom: 1px solid #f3f4f6;
+  white-space: nowrap;
+}
+.nav-dropdown-item:last-child {
+  border-bottom: 0;
+}
+.nav-dropdown-item:hover {
+  background-color: #fef2f2;
+  color: var(--tvct-red);
+  padding-left: 20px;
+}
+
+/* BREAKING TICKER */
+.ticker-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 14px;
+  background-color: #ffffff;
+}
+.ticker-badge {
+  background-color: var(--tvct-red);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 8px;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Quick Floating Switcher */
+.quick-nav-floating {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 9999;
+  background: rgba(17, 24, 39, 0.95);
+  color: #ffffff;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #374151;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.quick-nav-floating a {
+  color: #d1d5db;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  text-decoration: none;
+}
+.quick-nav-floating a:hover,
+.quick-nav-floating a.active {
+  background: var(--tvct-red);
+  color: #ffffff;
+}
+
+.border-gray-150 {
+  border-color: #f0f1f3;
+}
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
