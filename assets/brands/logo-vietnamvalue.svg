@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="100%" height="100%">
+  <!-- Vietnam Value Sunflower/Bird Emblem -->
+  <g transform="translate(10, 8)">
+    <circle cx="22" cy="22" r="21" fill="#008852"/>
+    <!-- Stylized bird/leaves -->
+    <path d="M12 28 C16 16, 26 12, 32 16 C28 20, 24 24, 20 28 C26 24, 30 26, 32 30 C24 34, 16 32, 12 28 Z" fill="#ffffff"/>
+    <circle cx="27" cy="18" r="2" fill="#ffd100"/>
+  </g>
+  <!-- Vietnam Value Typography -->
+  <text x="60" y="28" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="900" fill="#008852" letter-spacing="0.5">VIETNAM VALUE</text>
+  <text x="61" y="43" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="bold" fill="#be1016" letter-spacing="0.4">THƯƠNG HIỆU QUỐC GIA</text>
+</svg>

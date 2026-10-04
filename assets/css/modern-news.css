@@ -23,14 +23,17 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   color: var(--tvct-text);
   background-color: #f0f2f5; /* Soft light gray background for side gutters */
   line-height: 1.45;
   font-size: 14px;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 a {
@@ -79,12 +82,30 @@ img {
 .side-gutter-ad {
   width: 135px;
   flex-shrink: 0;
-  position: sticky;
-  top: 56px; /* Sits 10px below the 46px sticky navbar when scrolling */
-  z-index: 20;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 48px !important; /* Ghim chắc chắn ngay dưới thanh menu 42px khi scroll */
+  z-index: 40 !important;
+  align-self: flex-start !important;
+  transition: top 0.15s ease-out;
 }
 
-@media (max-width: 1199px) {
+/* Sticky Main Navbar */
+#main-navbar,
+nav.site-sticky-navbar,
+nav[class*="sticky"] {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background-color: #be1016 !important;
+}
+
+.nav-pinned-active {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+}
+
+@media (max-width: 1279px) {
   .side-gutter-ad {
     display: none !important;
   }
@@ -826,14 +847,34 @@ a:hover .news-title-sm {
 .aspect-16-9,
 .img-frame-16-9,
 .video-thumb-frame {
-  position: relative !important;
-  display: block !important;
-  width: 100% !important;
-  aspect-ratio: 16 / 9 !important;
-  height: auto !important;
-  background-color: #f3f4f6 !important; /* Neutral clean slate placeholder */
-  overflow: hidden !important;
+  position: relative;
+  display: block;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  background-color: #f3f4f6;
+  overflow: hidden;
   border-radius: 4px;
+}
+
+/* Thumbnail for horizontal article rows: fixed width on sm+, full width on mobile */
+.horizontal-news-thumb {
+  width: 224px !important;
+  min-width: 224px !important;
+  max-width: 224px !important;
+  aspect-ratio: 16 / 9 !important;
+  flex-shrink: 0 !important;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+}
+@media (max-width: 639px) {
+  .horizontal-news-thumb {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
 }
 
 .aspect-16-9 img,
@@ -976,4 +1017,227 @@ a:hover .news-title-sm {
 }
 .ad-popup-overlay.active .ad-popup-box {
   transform: scale(1);
+}
+
+
+/* ==========================================================================
+   INNOVATIVE RIGHT GUTTER AD FORMATS (DẠNG QUẢNG CÁO MỚI LẠ BÊN PHẢI)
+   ========================================================================== */
+.ad-story-card {
+  width: 135px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ad-story-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+.ad-story-progress {
+  display: flex;
+  gap: 3px;
+  padding: 4px 6px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.ad-story-progress span {
+  height: 2px;
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+}
+.ad-story-progress span.active {
+  background-color: #ffffff;
+}
+.ad-color-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.ad-color-dot:hover {
+  transform: scale(1.15);
+}
+
+
+/* ==========================================================================
+   MINIMALIST EDITORIAL HEADERS (TỐI GIẢN, ĐỠ RỐI MẮT, HIỆN ĐẠI)
+   ========================================================================== */
+.cat-heading-minimal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #be1016;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+.cat-heading-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.cat-heading-accent {
+  width: 4px;
+  height: 18px;
+  background-color: #be1016;
+  border-radius: 2px;
+  display: inline-block;
+}
+.cat-heading-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+}
+.cat-heading-links a {
+  transition: color 0.15s ease;
+}
+.cat-heading-links a:hover {
+  color: #be1016;
+}
+
+/* ==========================================================================
+   RIGHT GUTTER VERTICAL 3-IMAGE AUTO-SLIDER (1 KHỐI DUY NHẤT)
+   ========================================================================== */
+#right-gutter-ad-slider {
+  width: 135px;
+  height: 390px;
+  position: relative;
+  background: #111827;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.right-ad-slide {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  text-decoration: none;
+}
+.right-ad-dot {
+  transition: all 0.25s ease;
+}
+
+/* ==========================================================================
+   MOBILE NAVIGATION DRAWER & SMARTPHONE RESPONSIVE (ĐIỆN THOẠI)
+   ========================================================================== */
+#mobile-menu-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+#mobile-menu-drawer.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+#mobile-menu-drawer .drawer-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 290px;
+  max-width: 85vw;
+  background: #ffffff;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.25);
+  transform: translateX(-100%);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#mobile-menu-drawer.active .drawer-panel {
+  transform: translateX(0) !important;
+}
+
+/* Prevent unwanted horizontal scrolling without breaking position: sticky */
+html {
+  overflow-x: clip;
+}
+body {
+  overflow-x: clip;
+}
+@media (min-width: 1024px) {
+  html, body {
+    overflow-x: visible !important;
+  }
+}
+
+/* Mobile responsive padding & scaling */
+@media (max-width: 767px) {
+  .site-main-content {
+    padding: 12px 10px !important;
+  }
+  .header-inner-aligned {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .video-thumb-frame {
+    aspect-ratio: 16/9 !important;
+  }
+  /* Touch target min heights */
+  button, a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Robust sizing for horizontal news row thumbnails: fixed 224px on sm+, full width on mobile */
+.horizontal-news-thumb,
+.video-thumb-frame.sm\:w-56,
+.video-thumb-frame.w-56 {
+  width: 224px !important;
+  min-width: 224px !important;
+  max-width: 224px !important;
+  aspect-ratio: 16 / 9 !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  display: block !important;
+  overflow: hidden !important;
+  border-radius: 4px;
+}
+.video-thumb-frame.w-36 {
+  width: 144px !important;
+  min-width: 144px !important;
+  max-width: 144px !important;
+  aspect-ratio: 16 / 9 !important;
+  flex-shrink: 0 !important;
+}
+.video-thumb-frame.w-52 {
+  width: 208px !important;
+  min-width: 208px !important;
+  max-width: 208px !important;
+  aspect-ratio: 16 / 9 !important;
+  flex-shrink: 0 !important;
+}
+
+@media (max-width: 639px) {
+  .horizontal-news-thumb,
+  .video-thumb-frame.sm\:w-56 {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
 }

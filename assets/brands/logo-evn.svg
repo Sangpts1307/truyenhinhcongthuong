@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="100%" height="100%">
+  <!-- EVN Shield Logo -->
+  <g transform="translate(10, 8)">
+    <rect width="44" height="44" rx="8" fill="#003399"/>
+    <path d="M26 6 L12 24 L22 24 L18 38 L32 18 L22 18 Z" fill="#e60000"/>
+    <path d="M24 9 L15 22 L21 22 L17 33 L28 19 L22 19 Z" fill="#ffcc00"/>
+  </g>
+  <!-- EVN Typography -->
+  <text x="64" y="32" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="900" fill="#003399" letter-spacing="1">EVN</text>
+  <text x="65" y="45" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="bold" fill="#666666" letter-spacing="0.5">ĐIỆN LỰC VIỆT NAM</text>
+</svg>
