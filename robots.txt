@@ -1,0 +1,8 @@
+# Robots.txt for Truyền hình Công Thương (truyenhinhcongthuong.vn)
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/private/
+
+# Sitemap index
+Sitemap: https://truyenhinhcongthuong.vn/sitemap.xml

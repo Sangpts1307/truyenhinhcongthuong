@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileNav();
     initSearchTriggers();
     initScrollToTop();
+    initReadingProgressBar();
 });
 
 // 1. Live Clock
@@ -394,8 +395,8 @@ document.addEventListener('click', (e) => {
         e.target.classList.remove('active');
         document.body.style.overflow = '';
     }
-    // Collapse search pill if clicking outside
-    const container = document.getElementById('header-search-container');
+    // Collapse search overlay if clicking outside
+    const container = document.getElementById('header-search-wrapper');
     if (container && !container.contains(e.target)) {
         const input = document.getElementById('header-search-input');
         if (input && !input.value.trim()) {
@@ -404,32 +405,44 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// 14. Expandable Header Search (Chuẩn ảnh 1 tooltip & ảnh 2 pill input)
+// 14. Expandable Header Search Overlay (Mở ra đè lên che đi YouTube, Facebook, Quảng cáo)
 window.expandHeaderSearch = function() {
-    const btn = document.getElementById('header-search-btn');
-    const pill = document.getElementById('header-search-pill');
+    const socialGroup = document.getElementById('header-utility-social-ads');
+    const searchBtn = document.getElementById('header-search-btn');
+    const searchOverlay = document.getElementById('header-search-overlay-bar');
     const input = document.getElementById('header-search-input');
-    if (btn && pill) {
-        btn.classList.add('hidden');
-        pill.classList.remove('hidden');
-        pill.classList.add('active');
+    
+    if (socialGroup) {
+        socialGroup.classList.add('opacity-0', 'pointer-events-none');
+    }
+    if (searchBtn) {
+        searchBtn.classList.add('hidden');
+    }
+    if (searchOverlay) {
+        searchOverlay.classList.remove('hidden');
         if (input) {
-            input.focus();
+            setTimeout(() => input.focus(), 60);
         }
     }
 };
 
 window.collapseHeaderSearch = function() {
-    const btn = document.getElementById('header-search-btn');
-    const pill = document.getElementById('header-search-pill');
+    const socialGroup = document.getElementById('header-utility-social-ads');
+    const searchBtn = document.getElementById('header-search-btn');
+    const searchOverlay = document.getElementById('header-search-overlay-bar');
     const input = document.getElementById('header-search-input');
-    if (btn && pill) {
-        pill.classList.add('hidden');
-        pill.classList.remove('active');
-        btn.classList.remove('hidden');
-        if (input) {
-            input.value = '';
-        }
+
+    if (searchOverlay) {
+        searchOverlay.classList.add('hidden');
+    }
+    if (searchBtn) {
+        searchBtn.classList.remove('hidden');
+    }
+    if (socialGroup) {
+        socialGroup.classList.remove('opacity-0', 'pointer-events-none');
+    }
+    if (input) {
+        input.value = '';
     }
 };
 
@@ -442,4 +455,31 @@ window.handleHeaderSearch = function(e) {
     } else {
         window.location.href = `search.html`;
     }
+};
+
+// 15. Reading Progress Bar (Thanh tiến trình đọc bài viết)
+function initReadingProgressBar() {
+    let bar = document.getElementById('reading-progress-bar');
+    if (!bar) {
+        bar = document.createElement('div');
+        bar.id = 'reading-progress-bar';
+        document.body.prepend(bar);
+    }
+    window.addEventListener('scroll', () => {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (totalHeight > 0) {
+            const progress = (window.scrollY / totalHeight) * 100;
+            bar.style.width = Math.min(progress, 100) + '%';
+        }
+    }, { passive: true });
+}
+
+// 16. Font Size Resizer for Detail Articles
+window.changeArticleFontSize = function(delta) {
+    const content = document.getElementById('article-main-body') || document.querySelector('.article-content');
+    if (!content) return;
+    const currentSize = parseFloat(window.getComputedStyle(content).fontSize) || 16;
+    const newSize = Math.max(14, Math.min(22, currentSize + delta));
+    content.style.fontSize = newSize + 'px';
+    window.showToast(`Cỡ chữ: ${newSize}px`);
 };

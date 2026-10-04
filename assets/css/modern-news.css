@@ -200,34 +200,55 @@ img {
   transform: translateX(-50%) translateY(6px);
 }
 
-/* Expandable Pill Search Box (Chuẩn ảnh 2 media_1791052612576.png) */
-.header-search-pill {
+/* Header Search Overlay Bar (Mở rộng đè lên che đi YouTube, Facebook, Quảng cáo) */
+.header-search-overlay-bar {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  min-width: 330px;
+  max-width: 440px;
+  z-index: 50;
   display: flex;
   align-items: center;
-  border: 1px solid #9ca3af;
-  border-radius: 9999px; /* full rounded pill */
-  padding: 4px 12px;
-  background-color: #ffffff;
-  width: 240px;
-  max-width: 100%;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-  transition: all 0.25s ease;
-}
-.header-search-pill:focus-within {
-  border-color: #be1016;
-  box-shadow: 0 0 0 2px rgba(190, 16, 22, 0.15);
-}
-.header-search-pill input {
-  font-style: italic;
-  color: #374151;
-  font-size: 12px;
-}
-.header-search-pill input::placeholder {
-  font-style: italic;
-  color: #888888;
+  animation: searchOverlayFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Navbar Hover Effect (Chuẩn Image 3 media_1791052672456.png: Dark Tag & Submenu Dropdown) */
+@keyframes searchOverlayFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0) scale(1);
+  }
+}
+
+.header-search-overlay-bar form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #ffffff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-search-overlay-bar form:focus-within {
+  border-color: #be1016;
+  box-shadow: 0 0 0 3px rgba(190, 16, 22, 0.12);
+}
+
+.header-search-overlay-bar input {
+  font-size: 12px;
+  color: #1f2937;
+}
+
+/* Navbar Modern Hover Effect (Bỏ đổ nền đỏ đậm, chỉ giữ thanh gạch chân màu trắng tinh tế & dropdown hiện đại) */
 .nav-item-wrapper {
   position: relative;
   display: inline-flex;
@@ -236,25 +257,59 @@ img {
 }
 
 .nav-item-wrapper > a {
-  display: block;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 42px;
+  padding: 0 13px;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  transition: color 0.18s ease;
   white-space: nowrap;
-  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Thanh chỉ báo màu trắng dưới chân menu - Hiện đại, không làm đứt đoạn ribbon đỏ */
+.nav-item-wrapper > a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px 2px 0 0;
+  transform: scaleX(0);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
 }
 
 .nav-item-wrapper:hover > a {
-  background-color: rgba(0, 0, 0, 0.3) !important;
+  color: #ffffff;
 }
 
-/* Dropdown menu container that drops down on hover */
+.nav-item-wrapper:hover > a::after,
+.nav-item-wrapper.active > a::after {
+  transform: scaleX(1);
+}
+
+/* Dropdown menu container: Thẻ trắng nổi hiện đại, viền đỏ tinh tế */
 .nav-dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
   z-index: 100;
+  min-width: 200px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-top: 3px solid #be1016;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 14px 28px -4px rgba(0, 0, 0, 0.16), 0 6px 12px -2px rgba(0, 0, 0, 0.08);
+  padding: 6px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(4px);
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  transform: translateY(6px);
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s ease;
   pointer-events: none;
 }
 
@@ -265,56 +320,91 @@ img {
   pointer-events: auto;
 }
 
-/* The dark tag directly under the hovered item (Exact match with "Thời sự" in Image 3) */
-.nav-dropdown-tag {
-  display: inline-block;
-  background-color: #2e3236;
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: 2px 2px 0 0;
-  white-space: nowrap;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-  position: relative;
-}
-
-/* Little triangle pointer at the top of the tag */
-.nav-dropdown-tag::before {
-  content: "";
-  position: absolute;
-  bottom: 100%;
-  left: 14px;
-  border-width: 4px;
-  border-style: solid;
-  border-color: transparent transparent #2e3236 transparent;
-}
-
-/* The submenu dropdown box */
-.nav-dropdown-content {
-  background-color: #2e3236;
-  min-width: 180px;
-  border-radius: 0 3px 3px 3px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  padding: 6px 0;
-  border-top: 1px solid #43484e;
-}
-
-.nav-dropdown-content a {
-  display: block;
-  padding: 6px 14px;
-  color: #e5e7eb;
+.nav-dropdown-menu a {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  color: #374151;
   font-size: 12px;
   font-weight: 600;
+  border-radius: 5px;
   text-transform: none;
   letter-spacing: normal;
-  transition: background-color 0.15s ease, color 0.15s ease, padding-left 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 
-.nav-dropdown-content a:hover {
-  background-color: #be1016;
-  color: #ffffff;
-  padding-left: 18px;
+.nav-dropdown-menu a::before {
+  content: "›";
+  color: #9ca3af;
+  font-size: 15px;
+  font-weight: bold;
+  margin-right: 7px;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.nav-dropdown-menu a:hover {
+  background-color: #fef2f2;
+  color: #be1016;
+  transform: translateX(4px);
+}
+
+.nav-dropdown-menu a:hover::before {
+  color: #be1016;
+  transform: translateX(2px);
+}
+
+/* Reading Progress Bar (Thanh tiến trình đọc bài viết - Chuẩn 2026) */
+#reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #be1016, #ef4444);
+  z-index: 10001;
+  width: 0%;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+}
+
+/* Trending Topic Pills Carousel */
+.trending-pill-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  white-space: nowrap;
+}
+.trending-pill-bar::-webkit-scrollbar {
+  display: none;
+}
+.trending-pill-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #4b5563;
+  background: #f3f4f6;
+  border-radius: 9999px;
+  transition: all 0.15s ease;
+  border: 1px solid #e5e7eb;
+}
+.trending-pill-item:hover {
+  background: #fef2f2;
+  color: #be1016;
+  border-color: #fca5a5;
+  transform: translateY(-1px);
+}
+
+/* AI Article Quick Summary (Tóm tắt nhanh 30s) */
+.ai-summary-card {
+  background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);
+  border: 1px solid #fecaca;
+  border-left: 4px solid #be1016;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
 }
 
 /* Interactive Modal Backdrop & Card */
@@ -665,4 +755,225 @@ a:hover .news-title-sm {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* ==========================================================================
+   MODERN MINIMALIST PAGINATION (PHÂN TRANG PHONG CÁCH HIỆN ĐẠI 2026)
+   - Nút bo tròn mềm mại 8px
+   - Trạng thái Active đỏ thương hiệu sắc sảo
+   - Nút mũi tên trước/sau tinh gọn
+   - Dấu ba chấm phân tách chuẩn báo chí
+   ========================================================================== */
+.modern-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px 0 16px 0;
+  user-select: none;
+}
+.pag-btn {
+  min-width: 38px;
+  height: 38px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+.pag-btn:hover:not(:disabled):not(.pag-active) {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+  color: #be1016;
+  transform: translateY(-1px);
+}
+.pag-btn.pag-active {
+  background-color: #be1016;
+  border-color: #be1016;
+  color: #ffffff;
+  box-shadow: 0 3px 8px rgba(190, 16, 22, 0.25);
+  cursor: default;
+}
+.pag-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  background-color: #f9fafb;
+}
+.pag-arrow {
+  padding: 0 10px;
+}
+.pag-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #9ca3af;
+}
+
+/* ==========================================================================
+   TRUE 16:9 RATIO - GUARANTEED ZERO BLACK BARS (XOÁ BỎ HOÀN TOÀN 2 VỆT ĐEN)
+   ========================================================================== */
+.aspect-16-9,
+.img-frame-16-9,
+.video-thumb-frame {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  height: auto !important;
+  background-color: #f3f4f6 !important; /* Neutral clean slate placeholder */
+  overflow: hidden !important;
+  border-radius: 4px;
+}
+
+.aspect-16-9 img,
+.img-frame-16-9 img,
+.video-thumb-frame img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* Zoom out YouTube baked-in 4:3 letterbox black bars from hqdefault.jpg */
+.video-thumb-frame img[src*="ytimg.com/vi/"],
+.video-thumb-frame img[src*="youtube.com"],
+.img-frame-16-9 img[src*="ytimg.com/vi/"] {
+  transform: scale(1.35);
+  transform-origin: center center;
+}
+.video-thumb-frame:hover img[src*="ytimg.com/vi/"],
+.img-frame-16-9:hover img[src*="ytimg.com/vi/"] {
+  transform: scale(1.4);
+}
+
+/* ==========================================================================
+   CATEGORY HERO SECTION (1 TIN LỚN + 6 TIN PHỤ)
+   ========================================================================== */
+.hero-category-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e5e7eb;
+}
+.hero-lead-box {
+  transition: transform 0.2s ease;
+}
+.hero-sub-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+@media (max-width: 900px) {
+  .hero-sub-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .hero-sub-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   REAL-TIME TIMELINE WIDGET (DÒNG THỜI SỰ 24/7 - TOP 10 TIN MỚI NHẤT)
+   ========================================================================== */
+.timeline-track {
+  position: relative;
+  padding-left: 20px;
+}
+.timeline-track::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: 10px;
+  left: 6px;
+  width: 2px;
+  background-color: #e5e7eb;
+}
+.timeline-node {
+  position: relative;
+  margin-bottom: 14px;
+}
+.timeline-node:last-child {
+  margin-bottom: 0;
+}
+.timeline-node::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -18px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #be1016;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1.5px #be1016;
+}
+.timeline-node:hover::before {
+  transform: scale(1.25);
+  background-color: #dc2626;
+}
+
+/* ==========================================================================
+   CATEGORY SPONSOR RIBBON (TÀI TRỢ CHUYÊN MỤC)
+   ========================================================================== */
+.category-sponsor-ribbon {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #006699;
+  border-radius: 6px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+/* ==========================================================================
+   POPUP AD MODAL (QUẢNG CÁO POPUP MỞ RỘNG VỚI COUNTDOWN TỰ ĐỘNG)
+   ========================================================================== */
+.ad-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+.ad-popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.ad-popup-box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  max-width: 580px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  transform: scale(0.95);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ad-popup-overlay.active .ad-popup-box {
+  transform: scale(1);
 }
