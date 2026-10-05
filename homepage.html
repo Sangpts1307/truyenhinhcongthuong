@@ -721,57 +721,172 @@
                 </div>
             </section>
 
-            <!-- SECTION TẠP CHÍ ẢNH -->
+            <!-- SECTION TẠP CHÍ ẢNH (6 PHÓNG SỰ ẢNH CHUYÊN ĐỀ, CÂN ĐỐI TRỌN VẸN CHIỀU CAO) -->
             <section id="album-section" aria-label="Tạp chí ảnh Công Thương">
                 <div class="cat-ribbon-bar">
                     <h2 class="cat-ribbon-title">
                         <a href="category-detail.html?cat=tap-chi-anh">Tạp chí ảnh</a>
                     </h2>
-                    <div class="cat-ribbon-links">
-                        <span class="text-xs text-gray-500">Phóng sự ảnh chuyên đề</span>
+                    <div class="cat-ribbon-links hidden sm:flex">
+                        <span class="text-xs text-gray-500 mr-1">Phóng sự ảnh:</span>
+                        <a href="category-detail.html?cat=tap-chi-anh&sub=Công nghiệp">Công nghiệp</a>
+                        <span>|</span>
+                        <a href="category-detail.html?cat=tap-chi-anh&sub=Năng lượng">Năng lượng</a>
+                        <span>|</span>
+                        <a href="category-detail.html?cat=tap-chi-anh&sub=Xuất khẩu">Xuất khẩu</a>
+                        <span>|</span>
+                        <a href="category-detail.html?cat=tap-chi-anh" class="font-bold text-[#be1016]">Xem tất cả »</a>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <article class="flex gap-3 pb-3 border-b border-gray-100">
-                        <div class="w-32 h-24 flex-shrink-0 relative overflow-hidden">
-                            <a href="new-detail.html?id=1">
-                                <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80" alt="Năng lượng gió" class="w-full h-full object-cover">
+                    <!-- Album 1 -->
+                    <article class="flex gap-3 pb-3 border-b border-gray-100 group">
+                        <div class="w-32 h-24 flex-shrink-0 relative overflow-hidden rounded-xs bg-gray-100">
+                            <a href="new-detail.html?id=1" class="block w-full h-full">
+                                <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80" alt="Năng lượng gió" class="w-full h-full object-cover group-hover:scale-105 transition duration-200" loading="lazy">
                             </a>
-                            <span class="absolute bottom-1 left-1 bg-black/80 text-white text-[9px] font-bold px-1.5 py-0.5 flex items-center gap-1">
-                                <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+                            <span class="absolute bottom-1 left-1 bg-black/80 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-2xs flex items-center gap-1 shadow-xs pointer-events-none">
+                                <svg class="w-2.5 h-2.5 fill-current text-white" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
                                 8 ẢNH
                             </span>
                         </div>
                         <div class="flex-1 min-w-0 flex flex-col justify-between">
                             <div>
-                                <span class="text-[10px] text-gray-500 font-bold block mb-1">Ảnh: PV Tuấn Vũ</span>
-                                <h3 class="news-title-sm">
-                                    <a href="new-detail.html?id=1">Đại công trường điện gió ngoài khơi: Những cánh quạt khổng lồ đón gió biển Đông</a>
+                                <div class="flex items-center justify-between text-[10px] text-gray-500 font-bold mb-1">
+                                    <span>Ảnh: PV Tuấn Vũ</span>
+                                    <span class="text-gray-400 font-normal">04/10</span>
+                                </div>
+                                <h3 class="news-title-sm m-0 leading-snug line-clamp-2">
+                                    <a href="new-detail.html?id=1" class="hover:text-[#be1016] transition">Đại công trường điện gió ngoài khơi: Những cánh quạt khổng lồ đón gió biển Đông</a>
                                 </h3>
                             </div>
-                            <a href="new-detail.html?id=1" class="text-[11px] font-bold text-[#be1016] hover:underline mt-1">Xem album »</a>
+                            <a href="new-detail.html?id=1" class="text-[11px] font-bold text-[#be1016] hover:underline mt-1 flex items-center gap-0.5">Xem album »</a>
                         </div>
                     </article>
 
-                    <article class="flex gap-3 pb-3 border-b border-gray-100">
-                        <div class="w-32 h-24 flex-shrink-0 relative overflow-hidden">
-                            <a href="new-detail.html?id=2">
-                                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80" alt="OCOP" class="w-full h-full object-cover">
+                    <!-- Album 2 -->
+                    <article class="flex gap-3 pb-3 border-b border-gray-100 group">
+                        <div class="w-32 h-24 flex-shrink-0 relative overflow-hidden rounded-xs bg-gray-100">
+                            <a href="new-detail.html?id=2" class="block w-full h-full">
+                                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80" alt="OCOP" class="w-full h-full object-cover group-hover:scale-105 transition duration-200" loading="lazy">
                             </a>
-                            <span class="absolute bottom-1 left-1 bg-black/80 text-white text-[9px] font-bold px-1.5 py-0.5 flex items-center gap-1">
-                                <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+                            <span class="absolute bottom-1 left-1 bg-black/80 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-2xs flex items-center gap-1 shadow-xs pointer-events-none">
+                                <svg class="w-2.5 h-2.5 fill-current text-white" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
                                 6 ẢNH
                             </span>
                         </div>
                         <div class="flex-1 min-w-0 flex flex-col justify-between">
                             <div>
-                                <span class="text-[10px] text-gray-500 font-bold block mb-1">Ảnh: PV Lan Anh</span>
-                                <h3 class="news-title-sm">
-                                    <a href="new-detail.html?id=2">Tinh hoa làng nghề truyền thống và sản vật OCOP Việt Nam vươn ra biển lớn</a>
+                                <div class="flex items-center justify-between text-[10px] text-gray-500 font-bold mb-1">
+                                    <span>Ảnh: PV Lan Anh</span>
+                                    <span class="text-gray-400 font-normal">03/10</span>
+                                </div>
+                                <h3 class="news-title-sm m-0 leading-snug line-clamp-2">
+                                    <a href="new-detail.html?id=2" class="hover:text-[#be1016] transition">Tinh hoa làng nghề truyền thống và sản vật OCOP Việt Nam vươn ra biển lớn</a>
                                 </h3>
                             </div>
-                            <a href="new-detail.html?id=2" class="text-[11px] font-bold text-[#be1016] hover:underline mt-1">Xem album »</a>
+                            <a href="new-detail.html?id=2" class="text-[11px] font-bold text-[#be1016] hover:underline mt-1 flex items-center gap-0.5">Xem album »</a>
+                        </div>
+                    </article>
+
+                    <!-- Album 3 -->
+                    <article class="flex gap-3 pb-3 border-b border-gray-100 group">
+                        <div class="w-32 h-24 flex-shrink-0 relative overflow-hidden rounded-xs bg-gray-100">
+                            <a href="new-detail.html?id=3" class="block w-full h-full">
+                                <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Luyện thép Dung Quất" class="w-full h-full object-cover group-hover:scale-105 transition duration-200" loading="lazy">
+                            </a>
+                            <span class="absolute bottom-1 left-1 bg-black/80 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-2xs flex items-center gap-1 shadow-xs pointer-events-none">
+                                <svg class="w-2.5 h-2.5 fill-current text-white" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+                                10 ẢNH
+                            </span>
+                        </div>
+                        <div class="flex-1 min-w-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between text-[10px] text-gray-500 font-bold mb-1">
+                                    <span>Ảnh: PV Hoàng Nam</span>
+                                    <span class="text-gray-400 font-normal">02/10</span>
+                                </div>
+                                <h3 class="news-title-sm m-0 leading-snug line-clamp-2">
+                                    <a href="new-detail.html?id=3" class="hover:text-[#be1016] transition">Dây chuyền luyện thép công nghệ cao và tự động hóa tại Khu liên hợp Dung Quất</a>
+                                </h3>
+                            </div>
+                            <a href="new-detail.html?id=3" class="text-[11px] font-bold text-[#be1016] hover:underline mt-1 flex items-center gap-0.5">Xem album »</a>
+                        </div>
+                    </article>
+
+                    <!-- Album 4 -->
+                    <article class="flex gap-3 pb-3 border-b border-gray-100 group">
+                        <div class="w-32 h-24 flex-shrink-0 relative overflow-hidden rounded-xs bg-gray-100">
+                            <a href="new-detail.html?id=4" class="block w-full h-full">
+                                <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=800&q=80" alt="Vùng mỏ Quảng Ninh" class="w-full h-full object-cover group-hover:scale-105 transition duration-200" loading="lazy">
+                            </a>
+                            <span class="absolute bottom-1 left-1 bg-black/80 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-2xs flex items-center gap-1 shadow-xs pointer-events-none">
+                                <svg class="w-2.5 h-2.5 fill-current text-white" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+                                12 ẢNH
+                            </span>
+                        </div>
+                        <div class="flex-1 min-w-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between text-[10px] text-gray-500 font-bold mb-1">
+                                    <span>Ảnh: PV Quốc Toàn</span>
+                                    <span class="text-gray-400 font-normal">01/10</span>
+                                </div>
+                                <h3 class="news-title-sm m-0 leading-snug line-clamp-2">
+                                    <a href="new-detail.html?id=4" class="hover:text-[#be1016] transition">Nhịp đập hầm than vùng mỏ Quảng Ninh: Thợ mỏ vững tay búa giữ dòng than Tổ quốc</a>
+                                </h3>
+                            </div>
+                            <a href="new-detail.html?id=4" class="text-[11px] font-bold text-[#be1016] hover:underline mt-1 flex items-center gap-0.5">Xem album »</a>
+                        </div>
+                    </article>
+
+                    <!-- Album 5 -->
+                    <article class="flex gap-3 pb-3 border-b border-gray-100 group">
+                        <div class="w-32 h-24 flex-shrink-0 relative overflow-hidden rounded-xs bg-gray-100">
+                            <a href="new-detail.html?id=5" class="block w-full h-full">
+                                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Giàn khoan Bạch Hổ" class="w-full h-full object-cover group-hover:scale-105 transition duration-200" loading="lazy">
+                            </a>
+                            <span class="absolute bottom-1 left-1 bg-black/80 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-2xs flex items-center gap-1 shadow-xs pointer-events-none">
+                                <svg class="w-2.5 h-2.5 fill-current text-white" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+                                9 ẢNH
+                            </span>
+                        </div>
+                        <div class="flex-1 min-w-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between text-[10px] text-gray-500 font-bold mb-1">
+                                    <span>Ảnh: PV Văn Hải</span>
+                                    <span class="text-gray-400 font-normal">29/09</span>
+                                </div>
+                                <h3 class="news-title-sm m-0 leading-snug line-clamp-2">
+                                    <a href="new-detail.html?id=5" class="hover:text-[#be1016] transition">Cụm giàn khoan dầu khí Bạch Hổ rực sáng giữa biển đêm chủ quyền</a>
+                                </h3>
+                            </div>
+                            <a href="new-detail.html?id=5" class="text-[11px] font-bold text-[#be1016] hover:underline mt-1 flex items-center gap-0.5">Xem album »</a>
+                        </div>
+                    </article>
+
+                    <!-- Album 6 -->
+                    <article class="flex gap-3 pb-3 border-b border-gray-100 group">
+                        <div class="w-32 h-24 flex-shrink-0 relative overflow-hidden rounded-xs bg-gray-100">
+                            <a href="new-detail.html?id=6" class="block w-full h-full">
+                                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Cảng container Cái Mép" class="w-full h-full object-cover group-hover:scale-105 transition duration-200" loading="lazy">
+                            </a>
+                            <span class="absolute bottom-1 left-1 bg-black/80 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-2xs flex items-center gap-1 shadow-xs pointer-events-none">
+                                <svg class="w-2.5 h-2.5 fill-current text-white" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+                                15 ẢNH
+                            </span>
+                        </div>
+                        <div class="flex-1 min-w-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between text-[10px] text-gray-500 font-bold mb-1">
+                                    <span>Ảnh: PV Minh Quân</span>
+                                    <span class="text-gray-400 font-normal">28/09</span>
+                                </div>
+                                <h3 class="news-title-sm m-0 leading-snug line-clamp-2">
+                                    <a href="new-detail.html?id=6" class="hover:text-[#be1016] transition">Cảng container quốc tế Cái Mép - Thị Vải: Cửa ngõ vươn khơi xuất khẩu</a>
+                                </h3>
+                            </div>
+                            <a href="new-detail.html?id=6" class="text-[11px] font-bold text-[#be1016] hover:underline mt-1 flex items-center gap-0.5">Xem album »</a>
                         </div>
                     </article>
                 </div>

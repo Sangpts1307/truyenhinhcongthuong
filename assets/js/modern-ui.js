@@ -874,6 +874,38 @@ function initCategoryRouter() {
                 { label: 'Người lao động ngành', sub: 'Người lao động' },
                 { label: 'Hoạt động đoàn thể', sub: 'Hoạt động đoàn thể' }
             ]
+        },
+        'tap-chi-anh': {
+            name: 'Tạp chí ảnh',
+            title: 'CHUYÊN MỤC TẠP CHÍ ẢNH',
+            count: 'Hơn <strong>480</strong> phóng sự ảnh đa phương tiện độc quyền',
+            parentBreadcrumb: 'Tạp chí ảnh',
+            childBreadcrumb: 'Phóng sự ảnh chuyên đề',
+            sponsorName: 'TẬP ĐOÀN DẦU KHÍ QUỐC GIA VIỆT NAM (PETROVIETNAM)',
+            sponsorUrl: 'https://pvn.vn',
+            subtabs: [
+                { label: 'Tất cả', sub: '' },
+                { label: 'Ảnh Công nghiệp', sub: 'Công nghiệp' },
+                { label: 'Năng lượng & Điện gió', sub: 'Năng lượng' },
+                { label: 'Xuất nhập khẩu & Cảng biển', sub: 'Xuất nhập khẩu' },
+                { label: 'Làng nghề & OCOP', sub: 'Làng nghề' }
+            ]
+        },
+        'video': {
+            name: 'Video',
+            title: 'CHUYÊN MỤC VIDEO & PHÓNG SỰ',
+            count: 'Hơn <strong>3.200</strong> video tin tức & phóng sự điều tra',
+            parentBreadcrumb: 'Video',
+            childBreadcrumb: 'Bản tin truyền hình',
+            sponsorName: 'TỔNG CÔNG TY THƯƠNG MẠI SÀI GÒN (SATRA)',
+            sponsorUrl: 'https://satra.com.vn',
+            subtabs: [
+                { label: 'Tất cả', sub: '' },
+                { label: 'Thời sự Công Thương', sub: 'Thời sự' },
+                { label: 'Tiêu điểm tuần', sub: 'Tiêu điểm' },
+                { label: 'Phóng sự chuyên đề', sub: 'Phóng sự' },
+                { label: 'Talkshow', sub: 'Talkshow' }
+            ]
         }
     };
 
