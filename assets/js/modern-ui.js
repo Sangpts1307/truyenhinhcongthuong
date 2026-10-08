@@ -1033,7 +1033,7 @@ function renderCategoryContent(items, catName) {
                 </a>
                 <div class="flex-1 min-w-0 flex flex-col justify-between">
                     <span class="text-[9px] font-bold text-[#be1016] uppercase leading-none mb-0.5">${item.sub_category || catName}</span>
-                    <h3 class="text-xs font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2">
+                    <h3 class="text-xs font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair">
                         <a href="new-detail.html?id=${item.id}">${item.title}</a>
                     </h3>
                     <span class="text-[10px] text-gray-400 mt-0.5 leading-none">${(item.published_at || '2026-10-04').slice(0, 16)}</span>
@@ -1055,7 +1055,7 @@ function renderCategoryContent(items, catName) {
                     </span>
                 </a>
                 <span class="text-[10px] font-bold text-[#be1016] uppercase mb-0.5">${item.sub_category || catName}</span>
-                <h4 class="text-xs font-bold text-gray-900 hover:text-[#be1016] leading-snug line-clamp-2 mb-1">
+                <h4 class="text-xs font-bold text-gray-900 hover:text-[#be1016] leading-snug line-clamp-2 mb-1 font-playfair">
                     <a href="new-detail.html?id=${item.id}">${item.title}</a>
                 </h4>
                 <span class="text-[10px] text-gray-400">${(item.published_at || '2026-10-04').slice(0, 10)}</span>
@@ -1079,10 +1079,10 @@ function renderCategoryContent(items, catName) {
                     <div class="flex-1 min-w-0 flex flex-col justify-between">
                         <div>
                             <span class="text-[11px] font-bold text-[#be1016] uppercase tracking-wider block mb-1">${item.sub_category || catName}</span>
-                            <h3 class="text-base font-bold text-gray-900 leading-snug mb-1.5 hover:text-[#be1016]">
+                            <h3 class="text-base font-bold text-gray-900 leading-snug mb-1.5 hover:text-[#be1016] font-playfair">
                                 <a href="new-detail.html?id=${item.id}">${item.title}</a>
                             </h3>
-                            <p class="text-xs text-gray-600 leading-relaxed line-clamp-2">${item.excerpt || item.title}</p>
+                            <p class="text-xs text-gray-600 leading-relaxed line-clamp-2 font-roboto">${item.excerpt || item.title}</p>
                         </div>
                         <div class="flex items-center gap-3 text-[11px] text-gray-400 mt-2">
                             <span class="font-medium text-gray-700 flex items-center gap-1">

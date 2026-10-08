@@ -1,14 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700&display=swap');
+
 /* ==========================================================================
    TRUYỀN HÌNH CÔNG THƯƠNG - AUTHENTIC VIETNAMESE EDITORIAL DESIGN
-   Inspired by: Tuổi Trẻ (tuoitre.vn), truyenhinhcongthuong.vn, Wired.
-   Typography: Arial, Helvetica, sans-serif.
+   Typography:
+   - Article Titles & Headlines: Playfair Display (font serif cổ điển, trang trọng)
+   - Article Content & Body: Roboto (font sans-serif dễ đọc, sắc nét)
    Layout:
-   - Clean Header: Logo on left, header-side ad on right (Exact match with media_1791048942914.png)
+   - Clean Header: Logo on left, header-side ad on right
    - Full-width horizontal Navigation Bar & Ticker
-   - Side Gutter Banners (Flexbox columns, strictly below ticker, NEVER overlapping content or navbar!)
+   - Side Gutter Banners (Flexbox columns, strictly below ticker)
    ========================================================================== */
 
 :root {
+  --tvct-font-title: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --tvct-font-body: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   --tvct-red: #be1016;
   --tvct-red-dark: #990504;
   --tvct-blue: #1b2e63;
@@ -23,7 +28,7 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--tvct-font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -602,6 +607,7 @@ nav[class*="sticky"] {
 
 /* News item title */
 .news-title-sm {
+  font-family: var(--tvct-font-title);
   font-size: 13px;
   font-weight: bold;
   color: #111827;
@@ -643,8 +649,9 @@ a:hover .news-title-sm {
   flex-shrink: 0;
 }
 .news-bullet-link {
+  font-family: var(--tvct-font-title);
   color: #222222;
-  font-weight: 500;
+  font-weight: 600;
 }
 .news-bullet-link:hover {
   color: var(--tvct-red);
@@ -1241,3 +1248,71 @@ body {
     max-width: 100% !important;
   }
 }
+
+/* ==========================================================================
+   AUTHENTIC EDITORIAL TYPOGRAPHY RULES:
+   1. Tất cả tiêu đề bài viết: Sử dụng font chữ Playfair ('Playfair Display', serif)
+   2. Tất cả nội dung bên trong bài viết: Sử dụng font chữ Roboto ('Roboto', sans-serif)
+   ========================================================================== */
+
+/* --- 1. TIÊU ĐỀ BÀI VIẾT (PLAYFAIR DISPLAY) --- */
+.font-playfair,
+.font-serif,
+.article-title,
+.article-headline,
+.news-title-sm,
+.news-bullet-link,
+.hero-lead-box h2,
+#cat-hero-lead-title,
+.horizontal-news-thumb + div h3,
+.news-bullet-item a,
+.video-window h3,
+.legacy-player h1,
+.legacy-highlight h3,
+.legacy-video h3,
+.column-lead h3,
+.legacy-article h1,
+.legacy-list-item h2,
+article h1,
+article h2,
+article h3,
+article h4,
+#top-video h1,
+[aria-label="Nội dung bài viết"] h1,
+[aria-label="Tin cùng chuyên mục"] h3,
+[aria-label="Tin mới cập nhật"] a,
+[aria-label="Tin nổi bật chuyên mục"] h2,
+[aria-label="Tin nổi bật chuyên mục"] h3,
+[aria-label="Tin nổi bật chuyên mục"] h4,
+[aria-label="Top 10 đọc nhiều nhất"] a,
+[aria-label="Tin nóng đọc nhiều"] a,
+[aria-label="Kết quả đọc nhiều nhất"] h3,
+.stream-article-title {
+  font-family: var(--tvct-font-title), 'Playfair Display', Georgia, serif !important;
+}
+
+/* --- 2. NỘI DUNG BÊN TRONG BÀI VIẾT (ROBOTO) --- */
+.font-roboto,
+.font-sans,
+#article-body-text,
+#article-body-text *,
+.article-body,
+.article-body *,
+.article-content,
+.article-content *,
+.article-lead,
+.article-sapo,
+.sapo-quote,
+#cat-hero-lead-sapo,
+.hero-lead-box p,
+.horizontal-news-thumb + div p,
+.legacy-article p,
+.legacy-lead,
+.legacy-list-item p,
+[aria-label="Nội dung bài viết"] p,
+[aria-label="Nội dung bài viết"] blockquote,
+[aria-label="Nội dung bài viết"] div.text-base,
+[aria-label="Nội dung bài viết"] div#article-body-text {
+  font-family: var(--tvct-font-body), 'Roboto', sans-serif !important;
+}
+
