@@ -220,7 +220,7 @@
 
                 <!-- 10. VIDEO -->
                 <div class="nav-item-wrapper relative group ">
-                    <a href="category-detail.html?cat=video" class="px-2 sm:px-2.5">VIDEO</a>
+                    <a href="category-detail.html?cat=video" class="px-2 sm:px-2.5">BẢN TIN</a>
                 </div>
 
                 <span class="text-white/40 font-normal select-none">|</span>
@@ -370,13 +370,25 @@
 
     <main class="site-main-content">
     
-    <!-- HERO SECTION (Top breaking + Video highlight) -->
-    <section class="grid grid-cols-1 lg:grid-cols-12 gap-5 pb-6 border-b border-gray-200">
-        <!-- Lead Breaking (8 Cols) -->
-        <div class="lg:col-span-8 flex flex-col justify-between">
+    <!-- KHỐI ĐẦU TRANG: TIN ĐỌC NHIỀU + TIÊU ĐIỂM + BẢN TIN MỚI -->
+    <section class="homepage-hero-grid grid grid-cols-1 lg:grid-cols-12 gap-6 pb-8">
+        <!-- Tin đọc nhiều nhất: tham chiếu khung ver3 -->
+        <aside class="lg:col-span-3 order-2 lg:order-1 popular-reading-panel" aria-label="Tin đọc nhiều nhất">
+            <div class="popular-reading-heading">TIN ĐỌC NHIỀU NHẤT</div>
+            <ol class="popular-reading-list">
+                <li><span>01</span><div><a href="new-detail.html?id=21">Biến động tỷ giá USD và chuỗi cung ứng xuất nhập khẩu: Doanh nghiệp ứng phó thế nào?</a><small>NGUYỄN VĂN HÙNG · 24.850 LƯỢT ĐỌC</small></div></li>
+                <li><span>02</span><div><a href="new-detail.html?id=22">Bộ Công Thương tăng tốc thanh tra đột xuất tổng kho và cây xăng toàn quốc</a><small>HOÀNG MINH · 18.320 LƯỢT ĐỌC</small></div></li>
+                <li><span>03</span><div><a href="new-detail.html?id=23">Thương mại điện tử xuyên biên giới vượt mốc 25 tỷ USD đưa hàng Việt vươn xa</a><small>LÊ THU HÀ · 15.410 LƯỢT ĐỌC</small></div></li>
+                <li><span>04</span><div><a href="new-detail.html?id=24">Cắt giảm 99% dòng thuế EVFTA: Thủy sản và dệt may bứt phá sang thị trường EU</a><small>TRẦN QUANG · 12.980 LƯỢT ĐỌC</small></div></li>
+                <li><span>05</span><div><a href="new-detail.html?id=25">Khởi công tổ hợp hóa dầu và logistics năng lượng sạch tại miền Trung</a><small>ĐẶNG TUẤN · 11.200 LƯỢT ĐỌC</small></div></li>
+            </ol>
+        </aside>
+
+        <!-- Tiêu điểm bản tin -->
+        <div class="lg:col-span-6 order-1 lg:order-2 flex flex-col justify-between">
             <div>
-                <a href="new-detail.html?id=1" class="video-thumb-frame mb-3" style="aspect-ratio: 16/9;">
-                    <img src="https://i.ytimg.com/vi/lGC9zZ4lL2A/hqdefault.jpg" alt="EVNNPC chuyển đổi số" class="w-full h-full object-cover">
+                <a id="spotlight-link" href="new-detail.html?id=1" class="video-thumb-frame mb-3 spotlight-media" style="aspect-ratio: 16/9;">
+                    <img id="spotlight-image" src="assets/images/hero-evn-smart-grid.jpg" alt="EVNNPC chuyển đổi số" class="w-full h-full object-cover">
                     <span class="video-play-icon" style="width:48px;height:48px;">
                         <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 ml-0.5"><path d="M8 5v14l11-7z"/></svg>
                     </span>
@@ -386,62 +398,43 @@
                 </a>
                 <span class="bg-[#be1016] text-white text-[11px] font-bold uppercase px-2 py-0.5">Tiêu điểm Bản tin</span>
                 <h1 class="text-xl sm:text-2xl font-bold text-gray-900 leading-snug mt-2 mb-2 hover:text-[#be1016] font-playfair font-serif">
-                    <a href="new-detail.html?id=1">EVNNPC phát huy vai trò phong trào sáng kiến cải tiến kỹ thuật và chuyển đổi số trong quản lý vận hành</a>
+                    <a id="spotlight-title" href="new-detail.html?id=1">EVNNPC phát huy vai trò phong trào sáng kiến cải tiến kỹ thuật và chuyển đổi số trong quản lý vận hành</a>
                 </h1>
-                <p class="text-sm text-gray-600 leading-relaxed mb-3 font-roboto">
+                <p id="spotlight-excerpt" class="text-sm text-gray-600 leading-relaxed mb-3 font-roboto">
                     Tổng công ty Điện lực miền Bắc đẩy mạnh áp dụng công nghệ số, nâng cao năng suất lao động, đảm bảo cấp điện an toàn, ổn định phục vụ sản xuất kinh doanh và đời sống nhân dân.
                 </p>
+                <div id="spotlight-dots" class="spotlight-dots" aria-label="Chuyển tiêu điểm bản tin"></div>
             </div>
             
-            <!-- 3 Sub news beneath lead -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 border-t border-gray-100">
-                <article>
-                    <h3 class="news-title-sm">
-                        <a href="new-detail.html?id=2">Sản vật OCOP Việt Nam mở rộng thị trường xuất khẩu sang các nước EU</a>
-                    </h3>
-                    <span class="text-[11px] text-gray-400 mt-1 block">03/10/2026</span>
+            <!-- Tin liên quan dưới tiêu điểm -->
+            <div class="spotlight-related-grid">
+                <article class="spotlight-related-item">
+                    <a href="new-detail.html?id=2" class="spotlight-related-thumb"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=360&h=240&q=85" alt="Sản vật OCOP Việt Nam" loading="lazy"><i aria-hidden="true">▶</i></a>
+                    <div><h3><a href="new-detail.html?id=2">Sản vật OCOP Việt Nam mở rộng thị trường xuất khẩu sang các nước EU</a></h3><span>03/10/2026</span></div>
                 </article>
-                <article>
-                    <h3 class="news-title-sm">
-                        <a href="new-detail.html?id=3">Phát triển nguồn nhân lực chất lượng cao ngành năng lượng tái tạo</a>
-                    </h3>
-                    <span class="text-[11px] text-gray-400 mt-1 block">03/10/2026</span>
+                <article class="spotlight-related-item">
+                    <a href="new-detail.html?id=3" class="spotlight-related-thumb"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=360&h=240&q=85" alt="Năng lượng tái tạo" loading="lazy"><i aria-hidden="true">▶</i></a>
+                    <div><h3><a href="new-detail.html?id=3">Phát triển nguồn nhân lực chất lượng cao ngành năng lượng tái tạo</a></h3><span>03/10/2026</span></div>
                 </article>
-                <article>
-                    <h3 class="news-title-sm">
-                        <a href="new-detail.html?id=4">Hội nghị kết nối cung cầu và xúc tiến tiêu thụ nông sản công nghiệp</a>
-                    </h3>
-                    <span class="text-[11px] text-gray-400 mt-1 block">02/10/2026</span>
+                <article class="spotlight-related-item">
+                    <a href="new-detail.html?id=4" class="spotlight-related-thumb"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=360&h=240&q=85" alt="Kết nối cung cầu" loading="lazy"><i aria-hidden="true">▶</i></a>
+                    <div><h3><a href="new-detail.html?id=4">Hội nghị kết nối cung cầu và xúc tiến tiêu thụ nông sản công nghiệp</a></h3><span>02/10/2026</span></div>
                 </article>
             </div>
         </div>
 
-        <!-- Sidebar Top Videos & Fast News (4 Cols) -->
-        <aside class="lg:col-span-4 flex flex-col gap-4">
-            <div class="bg-gray-900 text-white p-3">
-                <div class="flex items-center justify-between pb-2 mb-2 border-b border-gray-700">
-                    <span class="text-xs font-bold uppercase text-amber-400 tracking-wider flex items-center gap-1.5">
-                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                        BẢN TIN MỚI NHẤT
-                    </span>
-                    <span class="text-[10px] bg-red-600 text-white px-1.5 py-0.2 font-bold">VTV1</span>
-                </div>
-                <div class="video-thumb-frame mb-2" style="aspect-ratio: 16/9;">
-                    <img src="https://i.ytimg.com/vi/aL33mYF2qP0/hqdefault.jpg" alt="Video spotlight">
-                    <span class="video-play-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5"><path d="M8 5v14l11-7z"/></svg>
-                    </span>
-                </div>
-                <h3 class="text-xs font-bold text-white hover:text-amber-300 leading-snug">
-                    <a href="new-detail.html?id=1">Chương trình Truyền hình Công Thương: Đảm bảo an ninh năng lượng quốc gia 2026</a>
+        <!-- Bản tin mới nhất và Tin tức nhanh dùng chung một khối -->
+        <aside class="lg:col-span-3 order-3 flex flex-col gap-0 latest-news-panel">
+            <div class="latest-news-heading"><h2>BẢN TIN MỚI</h2></div>
+            <article class="latest-news-featured">
+                <a href="new-detail.html?id=5" class="latest-news-thumb">
+                    <img src="assets/images/hero-evn-smart-grid.jpg" alt="Hạ tầng năng lượng thông minh">
+                </a>
+                <h3>
+                    <a href="new-detail.html?id=5">Bộ Công Thương thúc đẩy chuyển đổi xanh và nâng cao năng lực cạnh tranh cho doanh nghiệp</a>
                 </h3>
-            </div>
-
-            <!-- Bullet fast news -->
-            <div>
-                <div class="cat-ribbon-bar">
-                    <h2 class="cat-ribbon-title">Tin tức nhanh</h2>
-                </div>
+            </article>
+            <div class="latest-news-list">
                 <ul class="news-bullet-list">
                     <li class="news-bullet-item">
                         <span class="news-bullet-triangle">
@@ -484,6 +477,26 @@
         </aside>
     </section>
 
+    <!-- DÒNG THỜI SỰ · TOP 10 TIN MỚI NHẤT (theo khung ver3) -->
+    <section class="news-stream" aria-label="Dòng thời sự - Top 10 tin mới nhất">
+        <div class="news-stream-header">
+            <span class="news-stream-badge">DÒNG THỜI SỰ · TOP 10 TIN MỚI NHẤT</span>
+            <a href="category-detail.html?cat=tin-tuc" class="news-stream-more">Xem tất cả thời sự →</a>
+        </div>
+        <div class="news-stream-grid">
+            <a href="new-detail.html?id=1" class="news-stream-item"><b>CÔNG NGHIỆP</b><span>EVNNPC phát huy vai trò phong trào sáng kiến cải tiến kỹ thuật và chuyển đổi số</span></a>
+            <a href="new-detail.html?id=2" class="news-stream-item"><b>HỘI NHẬP</b><span>Việt Nam đảm nhiệm thành công vai trò đối tác toàn diện CPTPP và EVFTA 2026</span></a>
+            <a href="new-detail.html?id=3" class="news-stream-item"><b>THƯƠNG MẠI</b><span>Bộ Công Thương đồng hành hỗ trợ doanh nghiệp nông sản mở rộng thị phần tại EU và Hoa Kỳ</span></a>
+            <a href="new-detail.html?id=4" class="news-stream-item"><b>NĂNG LƯỢNG</b><span>Đẩy nhanh tiến độ thi công các dự án đường dây 500kV mạch 3 giải tỏa công suất điện</span></a>
+            <a href="new-detail.html?id=5" class="news-stream-item"><b>XUẤT NHẬP KHẨU</b><span>Tổng kim ngạch xuất nhập khẩu 9 tháng đầu năm lập kỷ lục mới vượt mốc 570 tỷ USD</span></a>
+            <a href="new-detail.html?id=6" class="news-stream-item"><b>THỊ TRƯỜNG</b><span>Tăng cường kiểm tra, giám sát thị trường xăng dầu và hàng hóa thiết yếu</span></a>
+            <a href="new-detail.html?id=7" class="news-stream-item"><b>XÚC TIẾN</b><span>Diễn đàn kết nối giao thương nông sản chế biến và chuyển giao công nghệ đóng gói xanh</span></a>
+            <a href="new-detail.html?id=8" class="news-stream-item"><b>CÔNG NGHIỆP</b><span>Chỉ số sản xuất công nghiệp IIP tháng 9 duy trì đà tăng trưởng tích cực</span></a>
+            <a href="new-detail.html?id=9" class="news-stream-item"><b>TIẾT KIỆM ĐIỆN</b><span>Phát động chiến dịch toàn dân thực hành tiết kiệm điện và sử dụng năng lượng tái tạo</span></a>
+            <a href="new-detail.html?id=10" class="news-stream-item"><b>ĐẦU TƯ</b><span>Triển khai cơ chế mua bán điện trực tiếp DPPA tạo đột phá thu hút vốn đầu tư xanh</span></a>
+        </div>
+    </section>
+
     <!-- HORIZONTAL BANNER AD (TINH HOA THƯƠNG HIỆU VIỆT) -->
     <div class="my-4 w-full">
         <a href="https://sabeco.com.vn" target="_blank" rel="noopener" class="block w-full rounded overflow-hidden shadow-xs hover:opacity-95 transition border border-gray-200">
@@ -491,11 +504,14 @@
         </a>
     </div>
 
-    <!-- MAIN TWO-COLUMN BODY (70% Left / 30% Right) -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-4">
+    <!-- BỐN CHUYÊN MỤC CHÍNH: cùng format 3 × 3; album trải ngang bên dưới -->
+    <section id="uniform-category-sections" class="uniform-category-sections" aria-label="Các chuyên mục chính"></section>
+    <section id="full-width-albums" class="full-width-albums" aria-label="Album ảnh Công Thương"></section>
+
+    <!-- Bố cục danh mục cũ được giữ trong mã nguồn để đối chiếu và đã ẩn. -->
+    <div class="home-category-layout grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
         
-        <!-- LEFT COLUMN (70% - 8 Columns): CÔNG NGHIỆP, THƯƠNG MẠI, TẠP CHÍ ẢNH -->
-        <div class="lg:col-span-8 flex flex-col gap-8">
+        <div class="flex flex-col gap-8">
             
             <!-- SECTION CÔNG NGHIỆP (CHUẨN FORM CŨ: 8 BÀI VIẾT tin cậy, không vỡ form) -->
             <section aria-label="Chuyên mục Công nghiệp">
@@ -905,8 +921,7 @@
             </section>
         </div>
 
-        <!-- RIGHT COLUMN (30% - 4 Columns): KHOA HỌC CN, HỘI NHẬP, QUẢNG CÁO -->
-        <aside class="lg:col-span-4 flex flex-col gap-6">
+        <aside class="flex flex-col gap-8">
             
             <!-- SECTION KHOA HỌC CÔNG NGHỆ -->
             <section aria-label="Khoa học công nghệ">
@@ -1461,6 +1476,7 @@
 
 <script src="assets/js/db.js"></script>
 <script src="assets/js/modern-ui.js"></script>
+<script src="assets/js/home-sections.js"></script>
 
     <!-- POPUP AD MODAL (QUẢNG CÁO MỞ RỘNG VỚI ĐẾM NGƯỢC 5S) -->
     <div id="ad-popup-modal" class="ad-popup-overlay">
