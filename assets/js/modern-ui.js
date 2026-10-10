@@ -1024,19 +1024,19 @@ function renderCategoryContent(items, catName) {
     if (sideBox) {
         const subSideItems = items.slice(1, 7);
         sideBox.innerHTML = subSideItems.map(item => `
-            <article class="flex gap-2.5 pb-2 border-b border-gray-100 last:border-b-0">
-                <a href="new-detail.html?id=${item.id}" class="video-thumb-frame w-28 aspect-16-9 flex-shrink-0 rounded-xs">
+            <article class="flex gap-3 pb-2.5 border-b border-gray-100 last:border-b-0">
+                <a href="new-detail.html?id=${item.id}" class="video-thumb-frame w-32 aspect-16-9 flex-shrink-0 rounded-xs">
                     <img src="${getThumb(item)}" alt="${item.title.replace(/"/g, '&quot;')}" loading="lazy">
                     <span class="video-play-icon" style="width:22px;height:22px;">
                         <svg viewBox="0 0 24 24" fill="currentColor" class="w-2.5 h-2.5 ml-0.5"><path d="M8 5v14l11-7z"/></svg>
                     </span>
                 </a>
                 <div class="flex-1 min-w-0 flex flex-col justify-between">
-                    <span class="text-[9px] font-bold text-[#be1016] uppercase leading-none mb-0.5">${item.sub_category || catName}</span>
-                    <h3 class="text-xs font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair">
+                    <span class="text-[10.5px] font-bold text-[#be1016] uppercase leading-none mb-1">${item.sub_category || catName}</span>
+                    <h3 class="text-[13.5px] sm:text-sm font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair font-serif">
                         <a href="new-detail.html?id=${item.id}">${item.title}</a>
                     </h3>
-                    <span class="text-[10px] text-gray-400 mt-0.5 leading-none">${(item.published_at || '2026-10-04').slice(0, 16)}</span>
+                    <span class="text-[11px] text-gray-400 mt-1 leading-none">${(item.published_at || '2026-10-04').slice(0, 16)}</span>
                 </div>
             </article>
         `).join('');
@@ -1054,11 +1054,11 @@ function renderCategoryContent(items, catName) {
                         <svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5 ml-0.5"><path d="M8 5v14l11-7z"/></svg>
                     </span>
                 </a>
-                <span class="text-[10px] font-bold text-[#be1016] uppercase mb-0.5">${item.sub_category || catName}</span>
-                <h4 class="text-xs font-bold text-gray-900 hover:text-[#be1016] leading-snug line-clamp-2 mb-1 font-playfair">
+                <span class="text-[11px] font-bold text-[#be1016] uppercase mb-1">${item.sub_category || catName}</span>
+                <h4 class="news-title-sm text-sm font-bold text-gray-900 hover:text-[#be1016] leading-snug line-clamp-2 mb-1.5 font-playfair font-serif">
                     <a href="new-detail.html?id=${item.id}">${item.title}</a>
                 </h4>
-                <span class="text-[10px] text-gray-400">${(item.published_at || '2026-10-04').slice(0, 10)}</span>
+                <span class="text-[11px] text-gray-400">${(item.published_at || '2026-10-04').slice(0, 10)}</span>
             </article>
         `).join('');
     }
@@ -1069,7 +1069,7 @@ function renderCategoryContent(items, catName) {
         const streamItems = items.slice(11, 21);
         if (streamItems.length) {
             streamBox.innerHTML = streamItems.map((item, idx) => `
-                <article class="flex flex-col sm:flex-row gap-4 pb-4 mb-4 border-b border-gray-150">
+                <article class="flex flex-col sm:flex-row gap-4 pb-5 mb-5 border-b border-gray-200">
                     <a href="new-detail.html?id=${item.id}" class="video-thumb-frame horizontal-news-thumb sm:w-56 aspect-16-9 flex-shrink-0">
                         <img src="${getThumb(item)}" alt="${item.title.replace(/"/g, '&quot;')}" loading="lazy">
                         <span class="video-play-icon" style="width:34px;height:34px;">
@@ -1079,12 +1079,12 @@ function renderCategoryContent(items, catName) {
                     <div class="flex-1 min-w-0 flex flex-col justify-between">
                         <div>
                             <span class="text-[11px] font-bold text-[#be1016] uppercase tracking-wider block mb-1">${item.sub_category || catName}</span>
-                            <h3 class="text-base font-bold text-gray-900 leading-snug mb-1.5 hover:text-[#be1016] font-playfair">
+                            <h3 class="text-base sm:text-[17px] font-bold text-gray-900 leading-snug mb-1.5 hover:text-[#be1016] font-playfair font-serif">
                                 <a href="new-detail.html?id=${item.id}">${item.title}</a>
                             </h3>
-                            <p class="text-xs text-gray-600 leading-relaxed line-clamp-2 font-roboto">${item.excerpt || item.title}</p>
+                            <p class="text-sm text-gray-600 leading-relaxed line-clamp-2 font-roboto">${item.excerpt || item.title}</p>
                         </div>
-                        <div class="flex items-center gap-3 text-[11px] text-gray-400 mt-2">
+                        <div class="flex items-center gap-3 text-xs text-gray-400 mt-2.5">
                             <span class="font-medium text-gray-700 flex items-center gap-1">
                                 <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
                                 ${item.author || 'Ban Biên tập'}
