@@ -152,7 +152,7 @@
     const image = document.querySelector('#spotlight-image');
     const link = document.querySelector('#spotlight-link');
     const title = document.querySelector('#spotlight-title');
-    const excerpt = document.querySelector('#spotlight-excerpt');
+    const excerpt = document.querySelector('#spotlight-excerpt') || document.querySelector('#spottelight-excerpt');
     const dots = document.querySelector('#spotlight-dots');
     if (!image || !link || !title || !excerpt || !dots) return;
 
