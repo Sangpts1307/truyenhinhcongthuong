@@ -1024,19 +1024,19 @@ function renderCategoryContent(items, catName) {
     if (sideBox) {
         const subSideItems = items.slice(1, 7);
         sideBox.innerHTML = subSideItems.map(item => `
-            <article class="flex gap-3 pb-2.5 border-b border-gray-100 last:border-b-0">
+            <article class="flex gap-3 py-2.5 border-b border-gray-100 first:pt-0 last:border-b-0">
                 <a href="new-detail.html?id=${item.id}" class="video-thumb-frame w-32 aspect-16-9 flex-shrink-0 rounded-xs">
                     <img src="${getThumb(item)}" alt="${item.title.replace(/"/g, '&quot;')}" loading="lazy">
                     <span class="video-play-icon" style="width:22px;height:22px;">
                         <svg viewBox="0 0 24 24" fill="currentColor" class="w-2.5 h-2.5 ml-0.5"><path d="M8 5v14l11-7z"/></svg>
                     </span>
                 </a>
-                <div class="flex-1 min-w-0 flex flex-col justify-between">
+                <div class="flex-1 min-w-0 flex flex-col">
                     <span class="text-[10.5px] font-bold text-[#be1016] uppercase leading-none mb-1">${item.sub_category || catName}</span>
-                    <h3 class="text-[13.5px] sm:text-sm font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair font-serif">
+                    <h3 class="text-base font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair font-serif">
                         <a href="new-detail.html?id=${item.id}">${item.title}</a>
                     </h3>
-                    <span class="text-[11px] text-gray-400 mt-1 leading-none">${(item.published_at || '2026-10-04').slice(0, 16)}</span>
+                    <span class="text-[11px] text-gray-400 mt-1 leading-none font-roboto">${(item.published_at || '2026-10-04').slice(0, 16)}</span>
                 </div>
             </article>
         `).join('');
@@ -1069,7 +1069,7 @@ function renderCategoryContent(items, catName) {
         const streamItems = items.slice(11, 21);
         if (streamItems.length) {
             streamBox.innerHTML = streamItems.map((item, idx) => `
-                <article class="flex flex-col sm:flex-row gap-4 pb-5 mb-5 border-b border-gray-200">
+                <article class="flex flex-col sm:flex-row gap-4 pb-3.5 mb-3.5 border-b border-gray-200 last:mb-0 last:pb-0 last:border-b-0">
                     <a href="new-detail.html?id=${item.id}" class="video-thumb-frame horizontal-news-thumb sm:w-56 aspect-16-9 flex-shrink-0">
                         <img src="${getThumb(item)}" alt="${item.title.replace(/"/g, '&quot;')}" loading="lazy">
                         <span class="video-play-icon" style="width:34px;height:34px;">

@@ -29,7 +29,7 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="assets/css/modern-news.css">
+    <link rel="stylesheet" href="assets/css/modern-news.css?v=4">
 
     <!-- SCHEMA.ORG STRUCTURED DATA CHO CHUYÊN MỤC BÁO CHÍ -->
     <script type="application/ld+json">
@@ -56,7 +56,7 @@
 
     <!-- TIER 2: LOGO & BRANDING & UTILITIES (RESPONSIVE TOÀN DIỆN CHO ĐIỆN THOẠI) -->
     <header class="w-full bg-white border-b border-gray-200">
-        <div class="header-inner-aligned py-2.5 sm:py-3.5 flex items-center justify-between gap-2 sm:gap-4">
+        <div class="header-inner-aligned py-3 sm:py-3.5 flex items-center justify-between gap-2 sm:gap-4">
 
             <!-- CÁNH TRÁI: LOGO + 2 DÒNG BRANDING (CO GIÃN MƯỢT MÀ TRÊN SMARTPHONE) -->
             <a href="homepage.html" class="flex items-center gap-2 sm:gap-3.5 flex-shrink-0 group">
@@ -507,7 +507,7 @@
             </nav>
 
             <!-- 2. CATEGORY TITLE & SUB-TABS (TỐI GIẢN, HIỆN ĐẠI, KHÔNG BO VIỀN THỪA THÃI) -->
-            <div class="border-b-2 border-[#be1016] pb-3 mb-6">
+            <div class=" mb-6">
                 <div class="flex flex-wrap items-center justify-between gap-3">
                     <h1 id="cat-main-title"
                         class="text-2xl sm:text-[26px] font-black uppercase text-[#be1016] tracking-tight m-0">
@@ -549,9 +549,9 @@
             </div> -->
 
             <!-- 4. KHỐI TIN NỔI BẬT HERO (CHUẨN WIREFRAME: 1 TIN LỚN + 6 TIN PHỤ) -->
-            <section class="hero-category-container" aria-label="Tin nổi bật chuyên mục">
+            <section class="hero-category-container mb-8" aria-label="Tin nổi bật chuyên mục">
                 <!-- Hàng 1: 1 Tin lớn (7 cột) + 2 Tin phụ bên cạnh (5 cột) -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 pb-4 border-b border-gray-200">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
                     <!-- 1 Tin bài lớn nổi bật -->
                     <article class="lg:col-span-7 flex flex-col justify-between hero-lead-box">
                         <div>
@@ -565,23 +565,23 @@
                                     </svg>
                                 </span>
                             </a>
-                            <span
+                            <!-- <span
                                 class="bg-[#be1016] text-white text-[11px] font-bold uppercase px-2 py-0.5 inline-block mb-1.5">
                                 TIÊU ĐIỂM CHUYÊN MỤC
-                            </span>
+                            </span> -->
                             <h2
-                                class="text-lg sm:text-xl lg:text-2xl font-black text-gray-900 leading-snug hover:text-[#be1016] mb-2 font-playfair font-serif">
+                                class="text-xl sm:text-2xl font-bold text-gray-900 leading-snug hover:text-[#be1016] mb-2 font-playfair font-serif">
                                 <a id="cat-hero-lead-title" href="new-detail.html?id=1">Nhiều sự kiện XTTM sẽ được tổ
                                     chức trong khuôn khổ Hội chợ làng nghề Việt Nam 2026</a>
                             </h2>
                             <p id="cat-hero-lead-sapo"
-                                class="text-sm text-gray-600 leading-relaxed line-clamp-3 font-roboto">
+                                class="text-sm text-gray-600 leading-relaxed line-clamp-2 font-roboto">
                                 Nhiều sự kiện XTTM sẽ được tổ chức trong khuôn khổ Hội chợ làng nghề Việt Nam 2026
                                 Theo thông tin từ Trung tâm Xúc tiến thương mại Nông nghiệp (Agritrade), tháng 10/2026,
                                 đơn vị sẽ phối hợp với các cơ quan chức năng tổ chức một loạt sự kiện...
                             </p>
                         </div>
-                        <div class="flex items-center gap-3 text-xs text-gray-500 mt-3 pt-2 border-t border-gray-100">
+                        <div class="flex items-center gap-3 text-xs text-gray-500 mt-3 pt-2 font-roboto">
                             <span class="font-bold text-gray-700 flex items-center gap-1">
                                 <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
@@ -598,9 +598,9 @@
                     </article>
 
                     <!-- 6 Tin phụ bên cạnh (Sub-hero 1..6 - 6 bài phụ cân đối khít với tin lớn bên trái) -->
-                    <div id="cat-hero-subside-container" class="lg:col-span-5 flex flex-col justify-between gap-2.5">
+                    <div id="cat-hero-subside-container" class="lg:col-span-5 flex flex-col justify-between">
 
-                        <article class="flex gap-3 pb-2.5 border-b border-gray-100 last:border-b-0">
+                        <article class="flex gap-3 py-2.5 border-b border-gray-100 first:pt-0 last:border-b-0">
                             <a href="new-detail.html?id=2"
                                 class="video-thumb-frame w-32 aspect-16-9 flex-shrink-0 rounded-xs">
                                 <img src="https://i.ytimg.com/vi/HNGE0soH5C8/mqdefault.jpg"
@@ -612,19 +612,17 @@
                                     </svg>
                                 </span>
                             </a>
-                            <div class="flex-1 min-w-0 flex flex-col justify-between">
-                                <span class="text-[10.5px] font-bold text-[#be1016] uppercase leading-none mb-0.5">Thời
-                                    sự</span>
+                            <div class="flex-1 min-w-0 flex flex-col">
                                 <h3
-                                    class="text-[13.5px] sm:text-sm font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair font-serif">
+                                    class="text-base font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair font-serif">
                                     <a href="new-detail.html?id=2">Đào tạo sử dụng “Hệ thống quản lý trực tuyến nhiệm vụ
                                         khoa học, công nghệ và đổi mới sáng tạo”</a>
                                 </h3>
-                                <span class="text-[11px] text-gray-400 mt-1 leading-none">2026-09-30 17:23</span>
+                                <span class="text-[11px] text-gray-400 mt-1 leading-none font-roboto">2026-09-30 17:23</span>
                             </div>
                         </article>
 
-                        <article class="flex gap-3 pb-2.5 border-b border-gray-100 last:border-b-0">
+                        <article class="flex gap-3 py-2.5 border-b border-gray-100 first:pt-0 last:border-b-0">
                             <a href="new-detail.html?id=3"
                                 class="video-thumb-frame w-32 aspect-16-9 flex-shrink-0 rounded-xs">
                                 <img src="https://i.ytimg.com/vi/r01Gdt6lGbo/mqdefault.jpg"
@@ -635,19 +633,17 @@
                                     </svg>
                                 </span>
                             </a>
-                            <div class="flex-1 min-w-0 flex flex-col justify-between">
-                                <span class="text-[10.5px] font-bold text-[#be1016] uppercase leading-none mb-0.5">Thời
-                                    sự</span>
+                            <div class="flex-1 min-w-0 flex flex-col">
                                 <h3
-                                    class="text-[13.5px] sm:text-sm font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair font-serif">
+                                    class="text-base font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair font-serif">
                                     <a href="new-detail.html?id=3">Đổi mới sáng tạo – động lực phát triển của toàn xã
                                         hội</a>
                                 </h3>
-                                <span class="text-[11px] text-gray-400 mt-1 leading-none">2026-09-30 17:23</span>
+                                <span class="text-[11px] text-gray-400 mt-1 leading-none font-roboto">2026-09-30 17:23</span>
                             </div>
                         </article>
 
-                        <article class="flex gap-3 pb-2.5 border-b border-gray-100 last:border-b-0">
+                        <article class="flex gap-3 py-2.5 border-b border-gray-100 first:pt-0 last:border-b-0">
                             <a href="new-detail.html?id=4"
                                 class="video-thumb-frame w-32 aspect-16-9 flex-shrink-0 rounded-xs">
                                 <img src="https://i.ytimg.com/vi/y8z8pzGfcAI/mqdefault.jpg"
@@ -658,19 +654,17 @@
                                     </svg>
                                 </span>
                             </a>
-                            <div class="flex-1 min-w-0 flex flex-col justify-between">
-                                <span class="text-[10.5px] font-bold text-[#be1016] uppercase leading-none mb-0.5">Thời
-                                    sự</span>
+                            <div class="flex-1 min-w-0 flex flex-col">
                                 <h3
-                                    class="text-[13.5px] sm:text-sm font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair font-serif">
+                                    class="text-base font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair font-serif">
                                     <a href="new-detail.html?id=4">Nâng tầm giá trị thương hiệu Việt Nam trên trường
                                         quốc tế</a>
                                 </h3>
-                                <span class="text-[11px] text-gray-400 mt-1 leading-none">2026-09-30 17:22</span>
+                                <span class="text-[11px] text-gray-400 mt-1 leading-none font-roboto">2026-09-30 17:22</span>
                             </div>
                         </article>
 
-                        <article class="flex gap-3 pb-2.5 border-b border-gray-100 last:border-b-0">
+                        <article class="flex gap-3 py-2.5 border-b border-gray-100 first:pt-0 last:border-b-0">
                             <a href="new-detail.html?id=5"
                                 class="video-thumb-frame w-32 aspect-16-9 flex-shrink-0 rounded-xs">
                                 <img src="https://i.ytimg.com/vi/019WG7VPLe0/mqdefault.jpg"
@@ -682,19 +676,17 @@
                                     </svg>
                                 </span>
                             </a>
-                            <div class="flex-1 min-w-0 flex flex-col justify-between">
-                                <span class="text-[10.5px] font-bold text-[#be1016] uppercase leading-none mb-0.5">Thời
-                                    sự</span>
+                            <div class="flex-1 min-w-0 flex flex-col">
                                 <h3
-                                    class="text-[13.5px] sm:text-sm font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair font-serif">
+                                    class="text-base font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair font-serif">
                                     <a href="new-detail.html?id=5">Dự thảo Nghị định thay thế các Nghị định của Chính
                                         phủ về kinh doanh xăng dầu</a>
                                 </h3>
-                                <span class="text-[11px] text-gray-400 mt-1 leading-none">2026-09-30 17:22</span>
+                                <span class="text-[11px] text-gray-400 mt-1 leading-none font-roboto">2026-09-30 17:22</span>
                             </div>
                         </article>
 
-                        <article class="flex gap-3 pb-2.5 border-b border-gray-100 last:border-b-0">
+                        <article class="flex gap-3 py-2.5 border-b border-gray-100 first:pt-0 last:border-b-0">
                             <a href="new-detail.html?id=6"
                                 class="video-thumb-frame w-32 aspect-16-9 flex-shrink-0 rounded-xs">
                                 <img src="https://i.ytimg.com/vi/rxynpRAsxjI/mqdefault.jpg"
@@ -706,19 +698,17 @@
                                     </svg>
                                 </span>
                             </a>
-                            <div class="flex-1 min-w-0 flex flex-col justify-between">
-                                <span class="text-[10.5px] font-bold text-[#be1016] uppercase leading-none mb-0.5">Thời
-                                    sự</span>
+                            <div class="flex-1 min-w-0 flex flex-col">
                                 <h3
-                                    class="text-[13.5px] sm:text-sm font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair font-serif">
+                                    class="text-base font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair font-serif">
                                     <a href="new-detail.html?id=6">Hội thảo khoa học “Định hướng phát triển công nghiệp
                                         hỗ trợ Việt Nam”</a>
                                 </h3>
-                                <span class="text-[11px] text-gray-400 mt-1 leading-none">2026-09-30 14:50</span>
+                                <span class="text-[11px] text-gray-400 mt-1 leading-none font-roboto">2026-09-30 14:50</span>
                             </div>
                         </article>
 
-                        <article class="flex gap-3 pb-2.5 border-b border-gray-100 last:border-b-0">
+                        <article class="flex gap-3 py-2.5 border-b border-gray-100 first:pt-0 last:border-b-0">
                             <a href="new-detail.html?id=7"
                                 class="video-thumb-frame w-32 aspect-16-9 flex-shrink-0 rounded-xs">
                                 <img src="https://i.ytimg.com/vi/51apdcOvjcY/mqdefault.jpg"
@@ -730,15 +720,13 @@
                                     </svg>
                                 </span>
                             </a>
-                            <div class="flex-1 min-w-0 flex flex-col justify-between">
-                                <span class="text-[10.5px] font-bold text-[#be1016] uppercase leading-none mb-0.5">Thời
-                                    sự</span>
+                            <div class="flex-1 min-w-0 flex flex-col">
                                 <h3
-                                    class="text-[13.5px] sm:text-sm font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair font-serif">
+                                    class="text-base font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair font-serif">
                                     <a href="new-detail.html?id=7">Bộ Công Thương phổ biến, đôn đốc phát triển điện mặt
                                         trời mái nhà</a>
                                 </h3>
-                                <span class="text-[11px] text-gray-400 mt-1 leading-none">2026-09-29 16:27</span>
+                                <span class="text-[11px] text-gray-400 mt-1 leading-none font-roboto">2026-09-29 16:27</span>
                             </div>
                         </article>
 
@@ -746,7 +734,7 @@
                 </div>
 
                 <!-- Hàng 2: 4 Tin phụ bên dưới (Sub-hero 3, 4, 5, 6 - Grid 4 cột) -->
-                <div id="cat-hero-subbottom-container" class="hero-sub-grid pt-3 border-t border-gray-200 mt-4">
+                <div id="cat-hero-subbottom-container" class="hero-sub-grid">
 
                     <article class="flex flex-col">
                         <a href="new-detail.html?id=4" class="video-thumb-frame aspect-16-9 mb-2">
@@ -758,11 +746,11 @@
                                 </svg>
                             </span>
                         </a>
-                        <span class="text-[11px] font-bold text-[#be1016] uppercase mb-0.5">Tiêu điểm</span>
+                        <!-- <span class="text-[11px] font-bold text-[#be1016] uppercase mb-0.5">Tiêu điểm</span> -->
                         <h4 class="news-title-sm text-sm font-bold text-gray-900 hover:text-[#be1016] leading-snug line-clamp-2 mb-1.5 font-playfair font-serif">
                             <a href="new-detail.html?id=4">Khởi công Khu công nghiệp Quế Võ III – Phân khu 2</a>
                         </h4>
-                        <span class="text-[11px] text-gray-400">2026-09-29</span>
+                        <span class="text-[11px] text-gray-400 font-roboto">2026-09-29</span>
                     </article>
 
                     <article class="flex flex-col">
@@ -775,11 +763,11 @@
                                 </svg>
                             </span>
                         </a>
-                        <span class="text-[11px] font-bold text-[#be1016] uppercase mb-0.5">Tiêu điểm</span>
+                        <!-- <span class="text-[11px] font-bold text-[#be1016] uppercase mb-0.5">Tiêu điểm</span> -->
                         <h4 class="news-title-sm text-sm font-bold text-gray-900 hover:text-[#be1016] leading-snug line-clamp-2 mb-1.5 font-playfair font-serif">
                             <a href="new-detail.html?id=5">Mở rộng cơ hội cho hàng Việt vào thị trường Halal</a>
                         </h4>
-                        <span class="text-[11px] text-gray-400">2026-09-29</span>
+                        <span class="text-[11px] text-gray-400 font-roboto">2026-09-29</span>
                     </article>
 
                     <article class="flex flex-col">
@@ -793,12 +781,12 @@
                                 </svg>
                             </span>
                         </a>
-                        <span class="text-[11px] font-bold text-[#be1016] uppercase mb-0.5">Tiêu điểm</span>
+                        <!-- <span class="text-[11px] font-bold text-[#be1016] uppercase mb-0.5">Tiêu điểm</span> -->
                         <h4 class="news-title-sm text-sm font-bold text-gray-900 hover:text-[#be1016] leading-snug line-clamp-2 mb-1.5 font-playfair font-serif">
                             <a href="new-detail.html?id=6">Petrovietnam trao quà an sinh xã hội, vui Tết Trung thu và
                                 khánh thành Phòng STEM tại Lai Châu</a>
                         </h4>
-                        <span class="text-[11px] text-gray-400">2026-09-26</span>
+                        <span class="text-[11px] text-gray-400 font-roboto">2026-09-26</span>
                     </article>
 
                     <article class="flex flex-col">
@@ -811,243 +799,266 @@
                                 </svg>
                             </span>
                         </a>
-                        <span class="text-[11px] font-bold text-[#be1016] uppercase mb-0.5">Tiêu điểm</span>
+                        <!-- <span class="text-[11px] font-bold text-[#be1016] uppercase mb-0.5">Tiêu điểm</span> -->
                         <h4 class="news-title-sm text-sm font-bold text-gray-900 hover:text-[#be1016] leading-snug line-clamp-2 mb-1.5 font-playfair font-serif">
                             <a href="new-detail.html?id=7">Tập trung nâng cao chất lượng nghiên cứu khoa học và công
                                 nghệ</a>
                         </h4>
-                        <span class="text-[11px] text-gray-400">2026-09-25</span>
+                        <span class="text-[11px] text-gray-400 font-roboto">2026-09-25</span>
                     </article>
 
                 </div>
             </section>
 
             <!-- 5. TOP 10 VIDEO ĐƯỢC QUAN TÂM (ĐỒNG BỘ RIBBON VÀ CARD CHUẨN TRANG CHỦ) -->
-            <section class="trending-videos-section mb-8" aria-label="Top 10 Video">
+            <section id="trending-videos-section" class="trending-videos-section pb-6 mb-8" aria-label="Video đang được quan tâm">
                 <div class="cat-ribbon-bar">
                     <div class="flex items-center gap-3">
                         <h2 class="cat-ribbon-title">
-                            <a href="category-detail.html?cat=video">TOP 10 VIDEO QUAN TÂM</a>
+                            <a href="category-detail.html?cat=video">Top 10 Video được quan tâm</a>
                         </h2>
+
                     </div>
-                    <span class="text-xs text-gray-500 hidden sm:inline">Khung hình 16:9 • Bấm để xem trực tiếp</span>
+                    <div class="flex items-center gap-2">
+                        <button type="button" id="trending-video-prev"
+                            class="text-gray-700 flex items-center justify-center transition shadow-xs cursor-pointer"
+                            aria-label="Xem video trước">
+                            <svg class="w-3.5 h-3.5 fill-none stroke-current" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button type="button" id="trending-video-next"
+                            class="text-gray-700 flex items-center justify-center transition shadow-xs cursor-pointer"
+                            aria-label="Xem video tiếp theo">
+                            <svg class="w-3.5 h-3.5 fill-none stroke-current" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                        <!-- <a href="category-detail.html?cat=video"
+                            class="font-bold text-[#be1016] text-xs hover:underline ml-2 hidden sm:inline">Xem tất cả
+                            »</a> -->
+                    </div>
                 </div>
 
-                <!-- Horizontal scroll of 10 video items -->
-                <div class="flex items-stretch gap-4 overflow-x-auto pb-3 scrollbar-thin">
+                <!-- 1x6 Video Slider Track -->
+                <div class="relative overflow-hidden group">
+                    <div id="trending-video-track" class="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar py-1"
+                        style="scrollbar-width: none; -ms-overflow-style: none;">
 
-                    <div class="flex-shrink-0 w-60 bg-white border border-gray-200 rounded overflow-hidden shadow-2xs group cursor-pointer"
-                        onclick="window.openVideoModal('V28YJ4b3zus', 'Nhiều sự kiện XTTM sẽ được tổ chức trong khuôn khổ Hội chợ làng nghề Việt Nam 2026')"><div class="video-thumb-frame aspect-16-9 relative">
-                            <img src="https://i.ytimg.com/vi/V28YJ4b3zus/mqdefault.jpg"
-                                alt="Nhiều sự kiện XTTM sẽ được tổ chức trong khuôn khổ Hội chợ làng nghề Việt Nam 2026"
-                                loading="lazy">
-                            <span class="video-play-icon" style="width:34px;height:34px;">
-                                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </span>
-                            <span
-                                class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">04:15</span>
-                        </div>
-                        <div class="p-2.5">
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] block mb-1">Thời sự</span>
-                            <h3 class="news-title-sm text-sm font-bold text-gray-900 group-hover:text-[#be1016] line-clamp-2 leading-snug m-0 font-playfair font-serif">
-                                Nhiều sự kiện XTTM sẽ được tổ chức trong khuôn khổ Hội chợ làng nghề Việt Nam 2026
+                        <!-- Video 1 -->
+                        <article
+                            class="flex-shrink-0 w-[calc((100%-16px)/1.35)] sm:w-[calc((100%-32px)/2.5)] lg:w-[calc((100%-48px)/3.5)] flex flex-col group/card">
+                            <a href="new-detail.html?id=1"
+                                class="video-thumb-frame w-full aspect-video rounded overflow-hidden relative block mb-2 bg-black">
+                                <img src="https://i.ytimg.com/vi/lGC9zZ4lL2A/mqdefault.jpg"
+                                    alt="EVNNPC phát huy vai trò phong trào sáng kiến"
+                                    class="w-full h-full object-cover group-hover/card:scale-105 transition duration-300"
+                                    loading="lazy">
+                                <span class="video-play-icon" style="width:34px;height:34px;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </span>
+                                <span
+                                    class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-2xs pointer-events-none">04:15</span>
+                            </a>
+                            <div>
+                                <a href="category-detail.html?cat=nang-luong"
+                                    class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] hover:underline">Năng lượng</a>
+                            </div>
+                            <h3 class="news-title-sm text-sm font-bold leading-snug line-clamp-2 m-0">
+                                <a href="new-detail.html?id=1" class="hover:text-[#be1016] transition">EVNNPC phát huy vai trò phong trào sáng kiến cải tiến kỹ thuật</a>
                             </h3>
-                        </div>
-                    </div>
+                        </article>
 
-                    <div class="flex-shrink-0 w-60 bg-white border border-gray-200 rounded overflow-hidden shadow-2xs group cursor-pointer"
-                        onclick="window.openVideoModal('HNGE0soH5C8', 'Đào tạo sử dụng “Hệ thống quản lý trực tuyến nhiệm vụ khoa học, công nghệ và đổi mới sáng tạo”')"><div class="video-thumb-frame aspect-16-9 relative">
-                            <img src="https://i.ytimg.com/vi/HNGE0soH5C8/mqdefault.jpg"
-                                alt="Đào tạo sử dụng “Hệ thống quản lý trực tuyến nhiệm vụ khoa học, công nghệ và đổi mới sáng tạo”"
-                                loading="lazy">
-                            <span class="video-play-icon" style="width:34px;height:34px;">
-                                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </span>
-                            <span
-                                class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">05:22</span>
-                        </div>
-                        <div class="p-2.5">
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] block mb-1">Thời sự</span>
-                            <h3 class="news-title-sm text-sm font-bold text-gray-900 group-hover:text-[#be1016] line-clamp-2 leading-snug m-0 font-playfair font-serif">
-                                Đào tạo sử dụng “Hệ thống quản lý trực tuyến nhiệm vụ khoa học, công nghệ và đổi mới
-                                sáng tạo”
+                        <!-- Video 2 -->
+                        <article
+                            class="flex-shrink-0 w-[calc((100%-16px)/1.35)] sm:w-[calc((100%-32px)/2.5)] lg:w-[calc((100%-48px)/3.5)] flex flex-col group/card">
+                            <a href="new-detail.html?id=2"
+                                class="video-thumb-frame w-full aspect-video rounded overflow-hidden relative block mb-2 bg-black">
+                                <img src="https://i.ytimg.com/vi/9HnIZZ0Kvkw/mqdefault.jpg"
+                                    alt="Doanh nghiệp ngành giấy đổi mới công nghệ"
+                                    class="w-full h-full object-cover group-hover/card:scale-105 transition duration-300"
+                                    loading="lazy">
+                                <span class="video-play-icon" style="width:34px;height:34px;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </span>
+                                <span
+                                    class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-2xs pointer-events-none">05:30</span>
+                            </a>
+                            <div>
+                                <a href="category-detail.html?cat=cong-nghiep"
+                                    class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] hover:underline">Công nghiệp</a>
+                            </div>
+                            <h3 class="news-title-sm text-sm font-bold leading-snug line-clamp-2 m-0">
+                                <a href="new-detail.html?id=2" class="hover:text-[#be1016] transition">Doanh nghiệp ngành giấy đổi mới công nghệ bảo vệ môi trường</a>
                             </h3>
-                        </div>
-                    </div>
+                        </article>
 
-                    <div class="flex-shrink-0 w-60 bg-white border border-gray-200 rounded overflow-hidden shadow-2xs group cursor-pointer"
-                        onclick="window.openVideoModal('r01Gdt6lGbo', 'Đổi mới sáng tạo – động lực phát triển của toàn xã hội')"><div class="video-thumb-frame aspect-16-9 relative">
-                            <img src="https://i.ytimg.com/vi/r01Gdt6lGbo/mqdefault.jpg"
-                                alt="Đổi mới sáng tạo – động lực phát triển của toàn xã hội" loading="lazy">
-                            <span class="video-play-icon" style="width:34px;height:34px;">
-                                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </span>
-                            <span
-                                class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">06:29</span>
-                        </div>
-                        <div class="p-2.5">
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] block mb-1">Thời sự</span>
-                            <h3 class="news-title-sm text-sm font-bold text-gray-900 group-hover:text-[#be1016] line-clamp-2 leading-snug m-0 font-playfair font-serif">
-                                Đổi mới sáng tạo – động lực phát triển của toàn xã hội
+                        <!-- Video 3 -->
+                        <article
+                            class="flex-shrink-0 w-[calc((100%-16px)/1.35)] sm:w-[calc((100%-32px)/2.5)] lg:w-[calc((100%-48px)/3.5)] flex flex-col group/card">
+                            <a href="new-detail.html?id=3"
+                                class="video-thumb-frame w-full aspect-video rounded overflow-hidden relative block mb-2 bg-black">
+                                <img src="https://i.ytimg.com/vi/kiYPsWdo6m8/mqdefault.jpg"
+                                    alt="Dây cáp điện khẳng định vị thế"
+                                    class="w-full h-full object-cover group-hover/card:scale-105 transition duration-300"
+                                    loading="lazy">
+                                <span class="video-play-icon" style="width:34px;height:34px;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </span>
+                                <span
+                                    class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-2xs pointer-events-none">03:45</span>
+                            </a>
+                            <div>
+                                <a href="category-detail.html?cat=thuong-mai"
+                                    class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] hover:underline">Thương mại</a>
+                            </div>
+                            <h3 class="news-title-sm text-sm font-bold leading-snug line-clamp-2 m-0">
+                                <a href="new-detail.html?id=3" class="hover:text-[#be1016] transition">Dây cáp điện khẳng định vị thế tại thị trường trong nước</a>
                             </h3>
-                        </div>
-                    </div>
+                        </article>
 
-                    <div class="flex-shrink-0 w-60 bg-white border border-gray-200 rounded overflow-hidden shadow-2xs group cursor-pointer"
-                        onclick="window.openVideoModal('y8z8pzGfcAI', 'Nâng tầm giá trị thương hiệu Việt Nam trên trường quốc tế')"><div class="video-thumb-frame aspect-16-9 relative">
-                            <img src="https://i.ytimg.com/vi/y8z8pzGfcAI/mqdefault.jpg"
-                                alt="Nâng tầm giá trị thương hiệu Việt Nam trên trường quốc tế" loading="lazy">
-                            <span class="video-play-icon" style="width:34px;height:34px;">
-                                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </span>
-                            <span
-                                class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">07:36</span>
-                        </div>
-                        <div class="p-2.5">
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] block mb-1">Thời sự</span>
-                            <h3 class="news-title-sm text-sm font-bold text-gray-900 group-hover:text-[#be1016] line-clamp-2 leading-snug m-0 font-playfair font-serif">
-                                Nâng tầm giá trị thương hiệu Việt Nam trên trường quốc tế
+                        <!-- Video 4 -->
+                        <article
+                            class="flex-shrink-0 w-[calc((100%-16px)/1.35)] sm:w-[calc((100%-32px)/2.5)] lg:w-[calc((100%-48px)/3.5)] flex flex-col group/card">
+                            <a href="new-detail.html?id=4"
+                                class="video-thumb-frame w-full aspect-video rounded overflow-hidden relative block mb-2 bg-black">
+                                <img src="https://i.ytimg.com/vi/GMcFabBa3Lk/mqdefault.jpg"
+                                    alt="Từ nỗi lo môi trường tro xỉ thành vật liệu"
+                                    class="w-full h-full object-cover group-hover/card:scale-105 transition duration-300"
+                                    loading="lazy">
+                                <span class="video-play-icon" style="width:34px;height:34px;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </span>
+                                <span
+                                    class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-2xs pointer-events-none">06:10</span>
+                            </a>
+                            <div>
+                                <a href="category-detail.html?cat=moi-truong"
+                                    class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] hover:underline">Môi trường</a>
+                            </div>
+                            <h3 class="news-title-sm text-sm font-bold leading-snug line-clamp-2 m-0">
+                                <a href="new-detail.html?id=4" class="hover:text-[#be1016] transition">Từ nỗi lo môi trường tro, xỉ thành vật liệu xây dựng bền vững</a>
                             </h3>
-                        </div>
-                    </div>
+                        </article>
 
-                    <div class="flex-shrink-0 w-60 bg-white border border-gray-200 rounded overflow-hidden shadow-2xs group cursor-pointer"
-                        onclick="window.openVideoModal('019WG7VPLe0', 'Dự thảo Nghị định thay thế các Nghị định của Chính phủ về kinh doanh xăng dầu')"><div class="video-thumb-frame aspect-16-9 relative">
-                            <img src="https://i.ytimg.com/vi/019WG7VPLe0/mqdefault.jpg"
-                                alt="Dự thảo Nghị định thay thế các Nghị định của Chính phủ về kinh doanh xăng dầu"
-                                loading="lazy">
-                            <span class="video-play-icon" style="width:34px;height:34px;">
-                                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </span>
-                            <span
-                                class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">08:43</span>
-                        </div>
-                        <div class="p-2.5">
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] block mb-1">Thời sự</span>
-                            <h3 class="news-title-sm text-sm font-bold text-gray-900 group-hover:text-[#be1016] line-clamp-2 leading-snug m-0 font-playfair font-serif">
-                                Dự thảo Nghị định thay thế các Nghị định của Chính phủ về kinh doanh xăng dầu
+                        <!-- Video 5 -->
+                        <article
+                            class="flex-shrink-0 w-[calc((100%-16px)/1.35)] sm:w-[calc((100%-32px)/2.5)] lg:w-[calc((100%-48px)/3.5)] flex flex-col group/card">
+                            <a href="new-detail.html?id=5"
+                                class="video-thumb-frame w-full aspect-video rounded overflow-hidden relative block mb-2 bg-black">
+                                <img src="https://i.ytimg.com/vi/FFEYuwKMu90/mqdefault.jpg"
+                                    alt="Mô hình sản xuất công nghiệp thông minh"
+                                    class="w-full h-full object-cover group-hover/card:scale-105 transition duration-300"
+                                    loading="lazy">
+                                <span class="video-play-icon" style="width:34px;height:34px;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </span>
+                                <span
+                                    class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-2xs pointer-events-none">04:50</span>
+                            </a>
+                            <div>
+                                <a href="category-detail.html?cat=cong-nghe"
+                                    class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] hover:underline">Công nghệ 4.0</a>
+                            </div>
+                            <h3 class="news-title-sm text-sm font-bold leading-snug line-clamp-2 m-0">
+                                <a href="new-detail.html?id=5" class="hover:text-[#be1016] transition">Mô hình sản xuất công nghiệp thúc đẩy thông minh hóa</a>
                             </h3>
-                        </div>
-                    </div>
+                        </article>
 
-                    <div class="flex-shrink-0 w-60 bg-white border border-gray-200 rounded overflow-hidden shadow-2xs group cursor-pointer"
-                        onclick="window.openVideoModal('rxynpRAsxjI', 'Hội thảo khoa học “Định hướng phát triển công nghiệp hỗ trợ Việt Nam”')"><div class="video-thumb-frame aspect-16-9 relative">
-                            <img src="https://i.ytimg.com/vi/rxynpRAsxjI/mqdefault.jpg"
-                                alt="Hội thảo khoa học “Định hướng phát triển công nghiệp hỗ trợ Việt Nam”"
-                                loading="lazy">
-                            <span class="video-play-icon" style="width:34px;height:34px;">
-                                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </span>
-                            <span
-                                class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">04:50</span>
-                        </div>
-                        <div class="p-2.5">
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] block mb-1">Thời sự</span>
-                            <h3 class="news-title-sm text-sm font-bold text-gray-900 group-hover:text-[#be1016] line-clamp-2 leading-snug m-0 font-playfair font-serif">
-                                Hội thảo khoa học “Định hướng phát triển công nghiệp hỗ trợ Việt Nam”
+                        <!-- Video 6 -->
+                        <article
+                            class="flex-shrink-0 w-[calc((100%-16px)/1.35)] sm:w-[calc((100%-32px)/2.5)] lg:w-[calc((100%-48px)/3.5)] flex flex-col group/card">
+                            <a href="new-detail.html?id=6"
+                                class="video-thumb-frame w-full aspect-video rounded overflow-hidden relative block mb-2 bg-black">
+                                <img src="https://i.ytimg.com/vi/z3H_knWxikY/mqdefault.jpg"
+                                    alt="Ngành điện miền Bắc an toàn lao động"
+                                    class="w-full h-full object-cover group-hover/card:scale-105 transition duration-300"
+                                    loading="lazy">
+                                <span class="video-play-icon" style="width:34px;height:34px;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </span>
+                                <span
+                                    class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-2xs pointer-events-none">05:15</span>
+                            </a>
+                            <div>
+                                <a href="category-detail.html?cat=nang-luong"
+                                    class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] hover:underline">Năng lượng</a>
+                            </div>
+                            <h3 class="news-title-sm text-sm font-bold leading-snug line-clamp-2 m-0">
+                                <a href="new-detail.html?id=6" class="hover:text-[#be1016] transition">Ngành điện miền Bắc đẩy mạnh an toàn lao động trong sản xuất</a>
                             </h3>
-                        </div>
-                    </div>
+                        </article>
 
-                    <div class="flex-shrink-0 w-60 bg-white border border-gray-200 rounded overflow-hidden shadow-2xs group cursor-pointer"
-                        onclick="window.openVideoModal('51apdcOvjcY', 'Bộ Công Thương phổ biến, đôn đốc phát triển điện mặt trời mái nhà')"><div class="video-thumb-frame aspect-16-9 relative">
-                            <img src="https://i.ytimg.com/vi/51apdcOvjcY/mqdefault.jpg"
-                                alt="Bộ Công Thương phổ biến, đôn đốc phát triển điện mặt trời mái nhà" loading="lazy">
-                            <span class="video-play-icon" style="width:34px;height:34px;">
-                                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </span>
-                            <span
-                                class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">05:57</span>
-                        </div>
-                        <div class="p-2.5">
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] block mb-1">Thời sự</span>
-                            <h3 class="news-title-sm text-sm font-bold text-gray-900 group-hover:text-[#be1016] line-clamp-2 leading-snug m-0 font-playfair font-serif">
-                                Bộ Công Thương phổ biến, đôn đốc phát triển điện mặt trời mái nhà
+                        <!-- Video 7 -->
+                        <article
+                            class="flex-shrink-0 w-[calc((100%-16px)/1.35)] sm:w-[calc((100%-32px)/2.5)] lg:w-[calc((100%-48px)/3.5)] flex flex-col group/card">
+                            <a href="new-detail.html?id=7"
+                                class="video-thumb-frame w-full aspect-video rounded overflow-hidden relative block mb-2 bg-black">
+                                <img src="https://i.ytimg.com/vi/q5ajbDlwSu4/mqdefault.jpg"
+                                    alt="Định vị tầm vóc chuyển dịch năng lượng"
+                                    class="w-full h-full object-cover group-hover/card:scale-105 transition duration-300"
+                                    loading="lazy">
+                                <span class="video-play-icon" style="width:34px;height:34px;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </span>
+                                <span
+                                    class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-2xs pointer-events-none">07:20</span>
+                            </a>
+                            <div>
+                                <a href="category-detail.html?cat=tieu-diem"
+                                    class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] hover:underline">Tiêu điểm</a>
+                            </div>
+                            <h3 class="news-title-sm text-sm font-bold leading-snug line-clamp-2 m-0">
+                                <a href="new-detail.html?id=7" class="hover:text-[#be1016] transition">Định vị tầm vóc và nòng cốt trong quá trình chuyển dịch năng lượng</a>
                             </h3>
-                        </div>
-                    </div>
+                        </article>
 
-                    <div class="flex-shrink-0 w-60 bg-white border border-gray-200 rounded overflow-hidden shadow-2xs group cursor-pointer"
-                        onclick="window.openVideoModal('7WFNXvcCPaQ', 'Khởi công Khu công nghiệp Quế Võ III – Phân khu 2')"><div class="video-thumb-frame aspect-16-9 relative">
-                            <img src="https://i.ytimg.com/vi/7WFNXvcCPaQ/mqdefault.jpg"
-                                alt="Khởi công Khu công nghiệp Quế Võ III – Phân khu 2" loading="lazy">
-                            <span class="video-play-icon" style="width:34px;height:34px;">
-                                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </span>
-                            <span
-                                class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">06:19</span>
-                        </div>
-                        <div class="p-2.5">
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] block mb-1">Thời sự</span>
-                            <h3 class="news-title-sm text-sm font-bold text-gray-900 group-hover:text-[#be1016] line-clamp-2 leading-snug m-0 font-playfair font-serif">
-                                Khởi công Khu công nghiệp Quế Võ III – Phân khu 2
+                        <!-- Video 8 -->
+                        <article
+                            class="flex-shrink-0 w-[calc((100%-16px)/1.35)] sm:w-[calc((100%-32px)/2.5)] lg:w-[calc((100%-48px)/3.5)] flex flex-col group/card">
+                            <a href="new-detail.html?id=8"
+                                class="video-thumb-frame w-full aspect-video rounded overflow-hidden relative block mb-2 bg-black">
+                                <img src="https://i.ytimg.com/vi/pluUmJCDfxk/mqdefault.jpg"
+                                    alt="Ngành gốm sứ chuyển đổi số"
+                                    class="w-full h-full object-cover group-hover/card:scale-105 transition duration-300"
+                                    loading="lazy">
+                                <span class="video-play-icon" style="width:34px;height:34px;">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </span>
+                                <span
+                                    class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-2xs pointer-events-none">04:40</span>
+                            </a>
+                            <div>
+                                <a href="category-detail.html?cat=thi-truong"
+                                    class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] hover:underline">Thị trường</a>
+                            </div>
+                            <h3 class="news-title-sm text-sm font-bold leading-snug line-clamp-2 m-0">
+                                <a href="new-detail.html?id=8" class="hover:text-[#be1016] transition">Ngành gốm sứ chuyển đổi số, đẩy mạnh phát triển thị trường nội địa</a>
                             </h3>
-                        </div>
-                    </div>
+                        </article>
 
-                    <div class="flex-shrink-0 w-60 bg-white border border-gray-200 rounded overflow-hidden shadow-2xs group cursor-pointer"
-                        onclick="window.openVideoModal('pRt5Hyp-3Yw', 'Mở rộng cơ hội cho hàng Việt vào thị trường Halal')"><div class="video-thumb-frame aspect-16-9 relative">
-                            <img src="https://i.ytimg.com/vi/pRt5Hyp-3Yw/mqdefault.jpg"
-                                alt="Mở rộng cơ hội cho hàng Việt vào thị trường Halal" loading="lazy">
-                            <span class="video-play-icon" style="width:34px;height:34px;">
-                                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </span>
-                            <span
-                                class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">07:26</span>
-                        </div>
-                        <div class="p-2.5">
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] block mb-1">Thời sự</span>
-                            <h3 class="news-title-sm text-sm font-bold text-gray-900 group-hover:text-[#be1016] line-clamp-2 leading-snug m-0 font-playfair font-serif">
-                                Mở rộng cơ hội cho hàng Việt vào thị trường Halal
-                            </h3>
-                        </div>
                     </div>
-
-                    <div class="flex-shrink-0 w-60 bg-white border border-gray-200 rounded overflow-hidden shadow-2xs group cursor-pointer"
-                        onclick="window.openVideoModal('n_oxYs7t1xY', 'Petrovietnam trao quà an sinh xã hội, vui Tết Trung thu và khánh thành Phòng STEM tại Lai Châu')"><div class="video-thumb-frame aspect-16-9 relative">
-                            <img src="https://i.ytimg.com/vi/n_oxYs7t1xY/mqdefault.jpg"
-                                alt="Petrovietnam trao quà an sinh xã hội, vui Tết Trung thu và khánh thành Phòng STEM tại Lai Châu"
-                                loading="lazy">
-                            <span class="video-play-icon" style="width:34px;height:34px;">
-                                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </span>
-                            <span
-                                class="absolute bottom-1.5 right-1.5 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">08:33</span>
-                        </div>
-                        <div class="p-2.5">
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-[#be1016] block mb-1">Thời sự</span>
-                            <h3 class="news-title-sm text-sm font-bold text-gray-900 group-hover:text-[#be1016] line-clamp-2 leading-snug m-0 font-playfair font-serif">
-                                Petrovietnam trao quà an sinh xã hội, vui Tết Trung thu và khánh thành Phòng STEM tại
-                                Lai Châu
-                            </h3>
-                        </div>
-                    </div>
-
                 </div>
             </section>
 
             <!-- 6. FILTER TOOLBAR -->
-            <div
+            <!-- <div
                 class="bg-gray-50 p-3 border-y border-gray-200 mb-8 flex flex-wrap items-center justify-between gap-3 text-[13px]">
                 <div class="flex flex-wrap items-center gap-3">
                     <span class="font-bold text-gray-700 uppercase flex items-center gap-1">
@@ -1089,16 +1100,16 @@
                     <button onclick="window.showToast('Đã sắp xếp theo đọc nhiều')"
                         class="px-2.5 py-1 font-bold bg-gray-200 text-gray-800 hover:bg-gray-300">Đọc nhiều</button>
                 </div>
-            </div>
+            </div> -->
 
             <!-- 7. MAIN 2-COLUMN LAYOUT (8 Cols Articles Stream + 4 Cols Sidebar) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
                 <!-- LEFT COLUMN: 10 DENSE ARTICLES STREAM (8 Cols) -->
                 <section class="lg:col-span-8 flex flex-col gap-4" aria-label="Danh sách tin tức">
-                    <div id="cat-stream-articles-container" class="space-y-1">
+                    <div id="cat-stream-articles-container">
 
-                        <article class="flex flex-col sm:flex-row gap-4 pb-5 mb-5 border-b border-gray-200">
+                        <article class="flex flex-col sm:flex-row gap-4 pb-3.5 mb-3.5 border-b border-gray-200 last:mb-0 last:pb-0 last:border-b-0">
                             <a href="new-detail.html?id=8"
                                 class="video-thumb-frame horizontal-news-thumb sm:w-56 aspect-16-9 flex-shrink-0">
                                 <img src="https://i.ytimg.com/vi/3zu-bWK-LPc/mqdefault.jpg"
@@ -1111,9 +1122,9 @@
                             </a>
                             <div class="flex-1 min-w-0 flex flex-col justify-between">
                                 <div>
-                                    <span
+                                    <!-- <span
                                         class="text-[11px] font-bold text-[#be1016] uppercase tracking-wider block mb-1">Thời
-                                        sự & Chính sách</span>
+                                        sự & Chính sách</span> -->
                                     <h3
                                         class="text-base sm:text-[17px] font-bold text-gray-900 leading-snug mb-1.5 hover:text-[#be1016] font-playfair font-serif">
                                         <a href="new-detail.html?id=8">Nâng tầm thương hiệu Việt trong kỷ nguyên số</a>
@@ -1125,11 +1136,11 @@
                                 </div>
                                 <div class="flex items-center gap-3 text-xs text-gray-400 mt-2.5">
                                     <span class="font-medium text-gray-700 flex items-center gap-1">
-                                        <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
+                                        <!-- <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                        </svg>
+                                        </svg> -->
                                         Ban Biên tập
                                     </span>
                                     <span>•</span>
@@ -1156,7 +1167,7 @@
                             </div>
                         </article>
 
-                        <article class="flex flex-col sm:flex-row gap-4 pb-5 mb-5 border-b border-gray-200">
+                        <article class="flex flex-col sm:flex-row gap-4 pb-3.5 mb-3.5 border-b border-gray-200 last:mb-0 last:pb-0 last:border-b-0">
                             <a href="new-detail.html?id=9"
                                 class="video-thumb-frame horizontal-news-thumb sm:w-56 aspect-16-9 flex-shrink-0">
                                 <img src="https://i.ytimg.com/vi/YVRWch_LxQM/mqdefault.jpg"
@@ -1170,9 +1181,9 @@
                             </a>
                             <div class="flex-1 min-w-0 flex flex-col justify-between">
                                 <div>
-                                    <span
+                                    <!-- <span
                                         class="text-[11px] font-bold text-[#be1016] uppercase tracking-wider block mb-1">Thời
-                                        sự & Chính sách</span>
+                                        sự & Chính sách</span> -->
                                     <h3
                                         class="text-base sm:text-[17px] font-bold text-gray-900 leading-snug mb-1.5 hover:text-[#be1016] font-playfair font-serif">
                                         <a href="new-detail.html?id=9">Thanh Hóa thực hiện giải pháp tiết kiệm năng
@@ -1185,11 +1196,11 @@
                                 </div>
                                 <div class="flex items-center gap-3 text-xs text-gray-400 mt-2.5">
                                     <span class="font-medium text-gray-700 flex items-center gap-1">
-                                        <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
+                                        <!-- <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                        </svg>
+                                        </svg> -->
                                         PV Hải Yến
                                     </span>
                                     <span>•</span>
@@ -1216,7 +1227,7 @@
                             </div>
                         </article>
 
-                        <article class="flex flex-col sm:flex-row gap-4 pb-5 mb-5 border-b border-gray-200">
+                        <article class="flex flex-col sm:flex-row gap-4 pb-3.5 mb-3.5 border-b border-gray-200 last:mb-0 last:pb-0 last:border-b-0">
                             <a href="new-detail.html?id=10"
                                 class="video-thumb-frame horizontal-news-thumb sm:w-56 aspect-16-9 flex-shrink-0">
                                 <img src="https://i.ytimg.com/vi/OLH3JDnqCsk/mqdefault.jpg"
@@ -1229,9 +1240,9 @@
                             </a>
                             <div class="flex-1 min-w-0 flex flex-col justify-between">
                                 <div>
-                                    <span
+                                    <!-- <span
                                         class="text-[11px] font-bold text-[#be1016] uppercase tracking-wider block mb-1">Thời
-                                        sự & Chính sách</span>
+                                        sự & Chính sách</span> -->
                                     <h3
                                         class="text-base sm:text-[17px] font-bold text-gray-900 leading-snug mb-1.5 hover:text-[#be1016] font-playfair font-serif">
                                         <a href="new-detail.html?id=10">EVNNPC tăng tốc hoàn thành các công trình điện
@@ -1244,11 +1255,11 @@
                                 </div>
                                 <div class="flex items-center gap-3 text-xs text-gray-400 mt-2.5">
                                     <span class="font-medium text-gray-700 flex items-center gap-1">
-                                        <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
+                                        <!-- <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                        </svg>
+                                        </svg> -->
                                         PV Minh Tuấn
                                     </span>
                                     <span>•</span>
@@ -1275,7 +1286,7 @@
                             </div>
                         </article>
 
-                        <article class="flex flex-col sm:flex-row gap-4 pb-5 mb-5 border-b border-gray-200">
+                        <article class="flex flex-col sm:flex-row gap-4 pb-3.5 mb-3.5 border-b border-gray-200 last:mb-0 last:pb-0 last:border-b-0">
                             <a href="new-detail.html?id=11"
                                 class="video-thumb-frame horizontal-news-thumb sm:w-56 aspect-16-9 flex-shrink-0">
                                 <img src="https://i.ytimg.com/vi/EPis9ZKsOCA/mqdefault.jpg"
@@ -1289,9 +1300,9 @@
                             </a>
                             <div class="flex-1 min-w-0 flex flex-col justify-between">
                                 <div>
-                                    <span
+                                    <!-- <span
                                         class="text-[11px] font-bold text-[#be1016] uppercase tracking-wider block mb-1">Thời
-                                        sự & Chính sách</span>
+                                        sự & Chính sách</span> -->
                                     <h3
                                         class="text-base sm:text-[17px] font-bold text-gray-900 leading-snug mb-1.5 hover:text-[#be1016] font-playfair font-serif">
                                         <a href="new-detail.html?id=11">Ngành dệt may ứng dụng khoa học công nghệ,
@@ -1304,11 +1315,11 @@
                                 </div>
                                 <div class="flex items-center gap-3 text-xs text-gray-400 mt-2.5">
                                     <span class="font-medium text-gray-700 flex items-center gap-1">
-                                        <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
+                                        <!-- <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                        </svg>
+                                        </svg> -->
                                         Ban Biên tập
                                     </span>
                                     <span>•</span>
@@ -1335,7 +1346,7 @@
                             </div>
                         </article>
 
-                        <article class="flex flex-col sm:flex-row gap-4 pb-5 mb-5 border-b border-gray-200">
+                        <article class="flex flex-col sm:flex-row gap-4 pb-3.5 mb-3.5 border-b border-gray-200 last:mb-0 last:pb-0 last:border-b-0">
                             <a href="new-detail.html?id=12"
                                 class="video-thumb-frame horizontal-news-thumb sm:w-56 aspect-16-9 flex-shrink-0">
                                 <img src="https://i.ytimg.com/vi/2517iesp_XM/mqdefault.jpg"
@@ -1348,9 +1359,9 @@
                             </a>
                             <div class="flex-1 min-w-0 flex flex-col justify-between">
                                 <div>
-                                    <span
+                                    <!-- <span
                                         class="text-[11px] font-bold text-[#be1016] uppercase tracking-wider block mb-1">Thời
-                                        sự & Chính sách</span>
+                                        sự & Chính sách</span> -->
                                     <h3
                                         class="text-base sm:text-[17px] font-bold text-gray-900 leading-snug mb-1.5 hover:text-[#be1016] font-playfair font-serif">
                                         <a href="new-detail.html?id=12">Diễn đàn phòng về thương mại 2026</a>
@@ -1362,11 +1373,11 @@
                                 </div>
                                 <div class="flex items-center gap-3 text-xs text-gray-400 mt-2.5">
                                     <span class="font-medium text-gray-700 flex items-center gap-1">
-                                        <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
+                                        <!-- <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                        </svg>
+                                        </svg> -->
                                         PV Hải Yến
                                     </span>
                                     <span>•</span>
@@ -1393,7 +1404,7 @@
                             </div>
                         </article>
 
-                        <article class="flex flex-col sm:flex-row gap-4 pb-5 mb-5 border-b border-gray-200">
+                        <article class="flex flex-col sm:flex-row gap-4 pb-3.5 mb-3.5 border-b border-gray-200 last:mb-0 last:pb-0 last:border-b-0">
                             <a href="new-detail.html?id=13"
                                 class="video-thumb-frame horizontal-news-thumb sm:w-56 aspect-16-9 flex-shrink-0">
                                 <img src="https://i.ytimg.com/vi/f1e6pXvAtcY/mqdefault.jpg"
@@ -1407,9 +1418,9 @@
                             </a>
                             <div class="flex-1 min-w-0 flex flex-col justify-between">
                                 <div>
-                                    <span
+                                    <!-- <span
                                         class="text-[11px] font-bold text-[#be1016] uppercase tracking-wider block mb-1">Thời
-                                        sự & Chính sách</span>
+                                        sự & Chính sách</span> -->
                                     <h3
                                         class="text-base sm:text-[17px] font-bold text-gray-900 leading-snug mb-1.5 hover:text-[#be1016] font-playfair font-serif">
                                         <a href="new-detail.html?id=13">Chuyển dịch chuỗi cung ứng toàn cầu: Cơ hội cho
@@ -1422,11 +1433,11 @@
                                 </div>
                                 <div class="flex items-center gap-3 text-xs text-gray-400 mt-2.5">
                                     <span class="font-medium text-gray-700 flex items-center gap-1">
-                                        <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
+                                        <!-- <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                        </svg>
+                                        </svg> -->
                                         PV Minh Tuấn
                                     </span>
                                     <span>•</span>
@@ -1453,7 +1464,7 @@
                             </div>
                         </article>
 
-                        <article class="flex flex-col sm:flex-row gap-4 pb-5 mb-5 border-b border-gray-200">
+                        <article class="flex flex-col sm:flex-row gap-4 pb-3.5 mb-3.5 border-b border-gray-200 last:mb-0 last:pb-0 last:border-b-0">
                             <a href="new-detail.html?id=14"
                                 class="video-thumb-frame horizontal-news-thumb sm:w-56 aspect-16-9 flex-shrink-0">
                                 <img src="https://i.ytimg.com/vi/o4pNM7dhLRg/mqdefault.jpg"
@@ -1467,9 +1478,9 @@
                             </a>
                             <div class="flex-1 min-w-0 flex flex-col justify-between">
                                 <div>
-                                    <span
+                                    <!-- <span
                                         class="text-[11px] font-bold text-[#be1016] uppercase tracking-wider block mb-1">Thời
-                                        sự & Chính sách</span>
+                                        sự & Chính sách</span> -->
                                     <h3
                                         class="text-base sm:text-[17px] font-bold text-gray-900 leading-snug mb-1.5 hover:text-[#be1016] font-playfair font-serif">
                                         <a href="new-detail.html?id=14">Bộ Công Thương tiếp nhận chức năng quản lý địa
@@ -1482,11 +1493,11 @@
                                 </div>
                                 <div class="flex items-center gap-3 text-xs text-gray-400 mt-2.5">
                                     <span class="font-medium text-gray-700 flex items-center gap-1">
-                                        <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
+                                        <!-- <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                        </svg>
+                                        </svg> -->
                                         Ban Biên tập
                                     </span>
                                     <span>•</span>
@@ -1513,7 +1524,7 @@
                             </div>
                         </article>
 
-                        <article class="flex flex-col sm:flex-row gap-4 pb-5 mb-5 border-b border-gray-200">
+                        <article class="flex flex-col sm:flex-row gap-4 pb-3.5 mb-3.5 border-b border-gray-200 last:mb-0 last:pb-0 last:border-b-0">
                             <a href="new-detail.html?id=15"
                                 class="video-thumb-frame horizontal-news-thumb sm:w-56 aspect-16-9 flex-shrink-0">
                                 <img src="https://i.ytimg.com/vi/_uExcL4hWJ0/mqdefault.jpg"
@@ -1527,9 +1538,9 @@
                             </a>
                             <div class="flex-1 min-w-0 flex flex-col justify-between">
                                 <div>
-                                    <span
+                                    <!-- <span
                                         class="text-[11px] font-bold text-[#be1016] uppercase tracking-wider block mb-1">Thời
-                                        sự & Chính sách</span>
+                                        sự & Chính sách</span> -->
                                     <h3
                                         class="text-base sm:text-[17px] font-bold text-gray-900 leading-snug mb-1.5 hover:text-[#be1016] font-playfair font-serif">
                                         <a href="new-detail.html?id=15">Khởi động TechFest 2026: Đưa sản phẩm khởi
@@ -1542,11 +1553,11 @@
                                 </div>
                                 <div class="flex items-center gap-3 text-xs text-gray-400 mt-2.5">
                                     <span class="font-medium text-gray-700 flex items-center gap-1">
-                                        <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
+                                        <!-- <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                        </svg>
+                                        </svg> -->
                                         PV Hải Yến
                                     </span>
                                     <span>•</span>
@@ -1573,7 +1584,7 @@
                             </div>
                         </article>
 
-                        <article class="flex flex-col sm:flex-row gap-4 pb-5 mb-5 border-b border-gray-200">
+                        <article class="flex flex-col sm:flex-row gap-4 pb-3.5 mb-3.5 border-b border-gray-200 last:mb-0 last:pb-0 last:border-b-0">
                             <a href="new-detail.html?id=16"
                                 class="video-thumb-frame horizontal-news-thumb sm:w-56 aspect-16-9 flex-shrink-0">
                                 <img src="https://i.ytimg.com/vi/cUr49v9d1oE/mqdefault.jpg"
@@ -1587,9 +1598,9 @@
                             </a>
                             <div class="flex-1 min-w-0 flex flex-col justify-between">
                                 <div>
-                                    <span
+                                    <!-- <span
                                         class="text-[11px] font-bold text-[#be1016] uppercase tracking-wider block mb-1">Thời
-                                        sự & Chính sách</span>
+                                        sự & Chính sách</span> -->
                                     <h3
                                         class="text-base sm:text-[17px] font-bold text-gray-900 leading-snug mb-1.5 hover:text-[#be1016] font-playfair font-serif">
                                         <a href="new-detail.html?id=16">Bộ Công Thương quy định chức năng, nhiệm vụ của
@@ -1602,11 +1613,11 @@
                                 </div>
                                 <div class="flex items-center gap-3 text-xs text-gray-400 mt-2.5">
                                     <span class="font-medium text-gray-700 flex items-center gap-1">
-                                        <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
+                                        <!-- <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                        </svg>
+                                        </svg> -->
                                         PV Minh Tuấn
                                     </span>
                                     <span>•</span>
@@ -1633,7 +1644,7 @@
                             </div>
                         </article>
 
-                        <article class="flex flex-col sm:flex-row gap-4 pb-5 mb-5 border-b border-gray-200">
+                        <article class="flex flex-col sm:flex-row gap-4 pb-3.5 mb-3.5 border-b border-gray-200 last:mb-0 last:pb-0 last:border-b-0">
                             <a href="new-detail.html?id=17"
                                 class="video-thumb-frame horizontal-news-thumb sm:w-56 aspect-16-9 flex-shrink-0">
                                 <img src="https://i.ytimg.com/vi/Q3zkYfiF1f4/mqdefault.jpg"
@@ -1647,9 +1658,9 @@
                             </a>
                             <div class="flex-1 min-w-0 flex flex-col justify-between">
                                 <div>
-                                    <span
+                                    <!-- <span
                                         class="text-[11px] font-bold text-[#be1016] uppercase tracking-wider block mb-1">Thời
-                                        sự & Chính sách</span>
+                                        sự & Chính sách</span> -->
                                     <h3
                                         class="text-base sm:text-[17px] font-bold text-gray-900 leading-snug mb-1.5 hover:text-[#be1016] font-playfair font-serif">
                                         <a href="new-detail.html?id=17">Chương trình tuyên truyền “Học sinh với kiến
@@ -1662,11 +1673,11 @@
                                 </div>
                                 <div class="flex items-center gap-3 text-xs text-gray-400 mt-2.5">
                                     <span class="font-medium text-gray-700 flex items-center gap-1">
-                                        <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
+                                        <!-- <svg class="w-3 h-3 text-gray-500 inline" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                        </svg>
+                                        </svg> -->
                                         Ban Biên tập
                                     </span>
                                     <span>•</span>
@@ -1721,7 +1732,7 @@
                 <aside class="lg:col-span-4 flex flex-col gap-6" aria-label="Sidebar chuyên mục">
 
                     <!-- WIDGET 1: DÒNG THỜI SỰ 24/7 (TOP 10 TIN MỚI NHẤT DẠNG TIMELINE THỜI GIAN THỰC) -->
-                    <div class="bg-white border border-gray-200 p-4 rounded shadow-2xs">
+                    <!-- <div class="bg-white border border-gray-200 p-4 rounded shadow-2xs">
                         <div class="flex items-center justify-between pb-2 mb-3 border-b-2 border-red-700">
                             <h3
                                 class="text-sm font-bold uppercase text-gray-900 tracking-wide flex items-center gap-1.5">
@@ -1850,10 +1861,10 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- WIDGET 2: KHUNG QUẢNG CÁO GOOGLE ADSENSE (MEDIUM RECTANGLE 300x250) -->
-                    <div class="bg-gray-50 border border-dashed border-gray-300 p-3 text-center rounded">
+                    <!-- <div class="bg-gray-50 border border-dashed border-gray-300 p-3 text-center rounded">
                         <div class="flex items-center justify-between text-[10px] text-gray-400 mb-1.5">
                             <span>Quảng cáo Google</span>
                             <span>300x250</span>
@@ -1872,16 +1883,15 @@
                                 Tìm hiểu ngay
                             </a>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- WIDGET 3: TOP 10 BÀI VIẾT ĐỌC NHIỀU / LIÊN QUAN TRONG CHUYÊN MỤC -->
                     <div>
                         <div class="cat-ribbon-bar">
-                            <h2 class="cat-ribbon-title">TOP 10 ĐỌC NHIỀU NHẤT</h2>
+                            <h2 class="cat-ribbon-title">TOP 10 ĐƯỢC QUAN TÂM</h2>
                         </div>
-                        <div class="space-y-1">
-
-                            <div class="flex items-start gap-3 py-2 border-b border-gray-100 last:border-b-0">
+                        <!-- <div class="space-y-1">
+                            <div class="flex items-start gap-3 py-3 border-b border-gray-100 last:border-b-0">
                                 <span
                                     class="text-2xl font-black text-[#be1016] w-7 flex-shrink-0 leading-none">01</span>
                                 <div class="flex-1">
@@ -1903,7 +1913,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-3 py-2 border-b border-gray-100 last:border-b-0">
+                            <div class="flex items-start gap-3 py-3 border-b border-gray-100 last:border-b-0">
                                 <span
                                     class="text-2xl font-black text-[#be1016] w-7 flex-shrink-0 leading-none">02</span>
                                 <div class="flex-1">
@@ -1925,7 +1935,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-3 py-2 border-b border-gray-100 last:border-b-0">
+                            <div class="flex items-start gap-3 py-3 border-b border-gray-100 last:border-b-0">
                                 <span
                                     class="text-2xl font-black text-[#be1016] w-7 flex-shrink-0 leading-none">03</span>
                                 <div class="flex-1">
@@ -1946,7 +1956,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-3 py-2 border-b border-gray-100 last:border-b-0">
+                            <div class="flex items-start gap-3 py-3 border-b border-gray-100 last:border-b-0">
                                 <span class="text-lg text-gray-400 font-bold w-6 flex-shrink-0 leading-none">04</span>
                                 <div class="flex-1">
                                     <h4
@@ -1967,7 +1977,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-3 py-2 border-b border-gray-100 last:border-b-0">
+                            <div class="flex items-start gap-3 py-3 border-b border-gray-100 last:border-b-0">
                                 <span class="text-lg text-gray-400 font-bold w-6 flex-shrink-0 leading-none">05</span>
                                 <div class="flex-1">
                                     <h4
@@ -1988,7 +1998,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-3 py-2 border-b border-gray-100 last:border-b-0">
+                            <div class="flex items-start gap-3 py-3 border-b border-gray-100 last:border-b-0">
                                 <span class="text-lg text-gray-400 font-bold w-6 flex-shrink-0 leading-none">06</span>
                                 <div class="flex-1">
                                     <h4
@@ -2009,7 +2019,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-3 py-2 border-b border-gray-100 last:border-b-0">
+                            <div class="flex items-start gap-3 py-3 border-b border-gray-100 last:border-b-0">
                                 <span class="text-lg text-gray-400 font-bold w-6 flex-shrink-0 leading-none">07</span>
                                 <div class="flex-1">
                                     <h4
@@ -2030,7 +2040,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-3 py-2 border-b border-gray-100 last:border-b-0">
+                            <div class="flex items-start gap-3 py-3 border-b border-gray-100 last:border-b-0">
                                 <span class="text-lg text-gray-400 font-bold w-6 flex-shrink-0 leading-none">08</span>
                                 <div class="flex-1">
                                     <h4
@@ -2051,7 +2061,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-3 py-2 border-b border-gray-100 last:border-b-0">
+                            <div class="flex items-start gap-3 py-3 border-b border-gray-100 last:border-b-0">
                                 <span class="text-lg text-gray-400 font-bold w-6 flex-shrink-0 leading-none">09</span>
                                 <div class="flex-1">
                                     <h4
@@ -2072,7 +2082,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-3 py-2 border-b border-gray-100 last:border-b-0">
+                            <div class="flex items-start gap-3 py-3 border-b border-gray-100 last:border-b-0">
                                 <span class="text-lg text-gray-400 font-bold w-6 flex-shrink-0 leading-none">10</span>
                                 <div class="flex-1">
                                     <h4
@@ -2092,28 +2102,57 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div> -->
+                          <ol class="popular-reading-list">
+                        <li><span>01</span>
+                            <div><a href="new-detail.html?id=21">Biến động tỷ giá USD và chuỗi cung ứng xuất nhập khẩu:
+                                    Doanh nghiệp ứng phó thế nào?</a><small>NGUYỄN VĂN HÙNG · 24.850 LƯỢT ĐỌC</small>
+                            </div>
+                        </li>
+                        <li><span>02</span>
+                            <div><a href="new-detail.html?id=22">Bộ Công Thương tăng tốc thanh tra đột xuất tổng kho và
+                                    cây xăng toàn quốc</a><small>HOÀNG MINH · 18.320 LƯỢT ĐỌC</small></div>
+                        </li>
+                        <li><span>03</span>
+                            <div><a href="new-detail.html?id=23">Thương mại điện tử xuyên biên giới vượt mốc 25 tỷ USD
+                                    đưa hàng Việt vươn xa</a><small>LÊ THU HÀ · 15.410 LƯỢT ĐỌC</small></div>
+                        </li>
+                        <li><span>04</span>
+                            <div><a href="new-detail.html?id=24">Cắt giảm 99% dòng thuế EVFTA: Thủy sản và dệt may bứt
+                                    phá sang thị trường EU</a><small>TRẦN QUANG · 12.980 LƯỢT ĐỌC</small></div>
+                        </li>
+                        <li><span>05</span>
+                            <div><a href="new-detail.html?id=25">Khởi công tổ hợp hóa dầu và logistics năng lượng sạch
+                                    tại miền Trung</a><small>ĐẶNG TUẤN · 11.200 LƯỢT ĐỌC</small></div>
+                        </li>
+                        <li><span>06</span>
+                            <div><a href="new-detail.html?id=25">Khởi công tổ hợp hóa dầu và logistics năng lượng sạch
+                                    tại miền Trung</a><small>ĐẶNG TUẤN · 11.200 LƯỢT ĐỌC</small></div>
+                        </li>
+                        <li><span>07</span>
+                            <div><a href="new-detail.html?id=24">Cắt giảm 99% dòng thuế EVFTA: Thủy sản và dệt may bứt
+                                    phá sang thị trường EU</a><small>TRẦN QUANG · 12.980 LƯỢT ĐỌC</small></div>
+                        </li>
+                        <li><span>08</span>
+                            <div><a href="new-detail.html?id=25">Khởi công tổ hợp hóa dầu và logistics năng lượng sạch
+                                    tại miền Trung</a><small>ĐẶNG TUẤN · 11.200 LƯỢT ĐỌC</small></div>
+                        </li>
+                        <li><span>09</span>
+                            <div><a href="new-detail.html?id=23">Thương mại điện tử xuyên biên giới vượt mốc 25 tỷ USD
+                                    đưa hàng Việt vươn xa</a><small>LÊ THU HÀ · 15.410 LƯỢT ĐỌC</small></div>
+                        </li>
+                        <li><span>10</span>
+                            <div><a href="new-detail.html?id=24">Cắt giảm 99% dòng thuế EVFTA: Thủy sản và dệt may bứt
+                                    phá sang thị trường EU</a><small>TRẦN QUANG · 12.980 LƯỢT ĐỌC</small></div>
+                        </li>
+                    </ol>
                     </div>
 
-                    <!-- WIDGET 4: VIDEO AD IN-FEED -->
-                    <div class="bg-gray-900 text-white p-3 rounded">
-                        <div class="flex items-center justify-between pb-1.5 mb-2 border-b border-gray-700">
-                            <span class="text-xs font-bold uppercase text-amber-300">VIDEO PHÁT SÓNG VTV1</span>
-                            <span class="bg-[#be1016] text-white text-[9px] px-1 font-bold">16:9</span>
-                        </div>
-                        <div class="video-responsive-16-9 mb-2">
-                            <iframe src="https://www.youtube.com/embed/lGC9zZ4lL2A?rel=0" title="Video"
-                                allowfullscreen></iframe>
-                        </div>
-                        <h3 class="text-sm font-bold text-white hover:text-amber-300 leading-snug font-playfair font-serif">
-                            <a href="new-detail.html?id=1">EVNNPC phát huy vai trò phong trào sáng kiến cải tiến kỹ
-                                thuật trong kỷ nguyên số</a>
-                        </h3>
-                    </div>
+                  
 
                     <!-- WIDGET 5: CHỦ ĐỀ LIÊN QUAN (TAG CLOUD) -->
                     <div class="pt-4 border-t border-gray-200">
-                        <h3 class="text-xs sm:text-sm font-bold uppercase text-gray-800 mb-2.5 pb-1.5 border-b border-gray-200">
+                        <h3 class="text-xs sm:text-sm font-bold uppercase text-gray-800 mb-2.5 pb-1.5">
                             CHỦ ĐỀ ĐƯỢC QUAN TÂM
                         </h3>
                         <div class="flex flex-wrap gap-1 text-xs">
@@ -2471,7 +2510,7 @@
                         class="text-blue-700 hover:underline">Quên mật khẩu?</a>
                 </div>
                 <button type="submit"
-                    class="w-full py-2.5 bg-[#be1016] text-white font-bold rounded hover:bg-red-800 transition shadow-xs mt-2 text-xs uppercase tracking-wide">
+                    class="w-full py-3 bg-[#be1016] text-white font-bold rounded hover:bg-red-800 transition shadow-xs mt-2 text-xs uppercase tracking-wide">
                     Đăng nhập
                 </button>
                 <div class="text-center text-[11px] text-gray-500 pt-1">
