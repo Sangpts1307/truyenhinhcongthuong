@@ -27,7 +27,7 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="assets/css/modern-news.css?v=2">
+    <link rel="stylesheet" href="assets/css/modern-news.css?v=6">
 </head>
 
 <body class="bg-[#f0f2f5]">
@@ -492,6 +492,8 @@
 
                 <!-- LEFT: ARTICLE CONTENT (8 Columns) -->
                 <article class="lg:col-span-8" aria-label="Nội dung bài viết">
+                    <!-- Nội dung được article-detail.js dựng theo type=video, type=text hoặc type=album. -->
+                    <section id="article-detail-content">
 
                     <span class="text-xs font-bold text-[#be1016] uppercase tracking-wider block mb-1">NĂNG LƯỢNG & ĐIỆN
                         LỰC</span>
@@ -681,6 +683,7 @@
                                 Lượng Xanh</a>
                         </div>
                     </div>
+                    </section>
 
                     <!-- TIN CÙNG CHUYÊN MỤC LIÊN QUAN (8 Articles Grid) -->
                     <section class="mt-8 pt-4" aria-label="Tin cùng chuyên mục">
@@ -1054,21 +1057,6 @@
                             </li>
 
                         </ul>
-                    </div>
-
-                    <!-- ADVERTISING -->
-                    <div class="text-center">
-                        <span class="text-[10px] text-gray-400 uppercase block mb-1">Quảng cáo</span>
-                        <a href="https://congthuong.vn" target="_blank" rel="noopener">
-                            <img src="assets/original/category-ad-cbi.jpg" alt="Quảng cáo" class="w-full h-auto">
-                        </a>
-                    </div>
-
-                    <div class="text-center">
-                        <span class="text-[10px] text-gray-400 uppercase block mb-1">Quảng cáo</span>
-                        <a href="https://moit.gov.vn" target="_blank" rel="noopener">
-                            <img src="assets/original/category-ad-brand.jpg" alt="Quảng cáo" class="w-full h-auto">
-                        </a>
                     </div>
 
                 </aside>
@@ -1500,6 +1488,7 @@
 
 
     <script src="assets/js/db.js"></script>
+    <script src="assets/js/article-detail.js"></script>
     <script src="assets/js/modern-ui.js"></script>
 
     <!-- POPUP AD MODAL (QUẢNG CÁO MỞ RỘNG VỚI ĐẾM NGƯỢC 5S) -->

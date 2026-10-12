@@ -10,7 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollToTop();
     initReadingProgressBar();
     initAdPopupModal();
+    routeVideoCards();
 });
+
+// The play icon is a content-type marker: every card that shows it opens the
+// video-first article template, regardless of where the card is rendered.
+function routeVideoCards() {
+    document.querySelectorAll('a.video-thumb-frame[href*="new-detail.html"]').forEach(link => {
+        const url = new URL(link.href, window.location.href);
+        if (!url.searchParams.has('type')) {
+            url.searchParams.set('type', 'video');
+            link.href = url.href;
+        }
+    });
+}
 
 // 1. Live Clock
 function initLiveClock() {
@@ -1025,7 +1038,7 @@ function renderCategoryContent(items, catName) {
         const subSideItems = items.slice(1, 7);
         sideBox.innerHTML = subSideItems.map(item => `
             <article class="flex gap-3 py-2.5 border-b border-gray-100 first:pt-0 last:border-b-0">
-                <a href="new-detail.html?id=${item.id}" class="video-thumb-frame w-32 aspect-16-9 flex-shrink-0 rounded-xs">
+                <a href="new-detail.html?id=${item.id}&type=video" class="video-thumb-frame w-32 aspect-16-9 flex-shrink-0 rounded-xs">
                     <img src="${getThumb(item)}" alt="${item.title.replace(/"/g, '&quot;')}" loading="lazy">
                     <span class="video-play-icon" style="width:22px;height:22px;">
                         <svg viewBox="0 0 24 24" fill="currentColor" class="w-2.5 h-2.5 ml-0.5"><path d="M8 5v14l11-7z"/></svg>
@@ -1034,7 +1047,7 @@ function renderCategoryContent(items, catName) {
                 <div class="flex-1 min-w-0 flex flex-col">
                     <span class="text-[10.5px] font-bold text-[#be1016] uppercase leading-none mb-1">${item.sub_category || catName}</span>
                     <h3 class="text-base font-bold text-gray-900 leading-snug hover:text-[#be1016] line-clamp-2 font-playfair font-serif">
-                        <a href="new-detail.html?id=${item.id}">${item.title}</a>
+                        <a href="new-detail.html?id=${item.id}&type=video">${item.title}</a>
                     </h3>
                     <span class="text-[11px] text-gray-400 mt-1 leading-none font-roboto">${(item.published_at || '2026-10-04').slice(0, 16)}</span>
                 </div>
@@ -1048,7 +1061,7 @@ function renderCategoryContent(items, catName) {
         const subBottomItems = items.slice(7, 11);
         bottomBox.innerHTML = subBottomItems.map(item => `
             <article class="flex flex-col">
-                <a href="new-detail.html?id=${item.id}" class="video-thumb-frame aspect-16-9 mb-2">
+                <a href="new-detail.html?id=${item.id}&type=video" class="video-thumb-frame aspect-16-9 mb-2">
                     <img src="${getThumb(item)}" alt="${item.title.replace(/"/g, '&quot;')}" loading="lazy">
                     <span class="video-play-icon" style="width:30px;height:30px;">
                         <svg viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5 ml-0.5"><path d="M8 5v14l11-7z"/></svg>
@@ -1056,7 +1069,7 @@ function renderCategoryContent(items, catName) {
                 </a>
                 <span class="text-[11px] font-bold text-[#be1016] uppercase mb-1">${item.sub_category || catName}</span>
                 <h4 class="news-title-sm text-sm font-bold text-gray-900 hover:text-[#be1016] leading-snug line-clamp-2 mb-1.5 font-playfair font-serif">
-                    <a href="new-detail.html?id=${item.id}">${item.title}</a>
+                    <a href="new-detail.html?id=${item.id}&type=video">${item.title}</a>
                 </h4>
                 <span class="text-[11px] text-gray-400">${(item.published_at || '2026-10-04').slice(0, 10)}</span>
             </article>
@@ -1070,7 +1083,7 @@ function renderCategoryContent(items, catName) {
         if (streamItems.length) {
             streamBox.innerHTML = streamItems.map((item, idx) => `
                 <article class="flex flex-col sm:flex-row gap-4 pb-3.5 mb-3.5 border-b border-gray-200 last:mb-0 last:pb-0 last:border-b-0">
-                    <a href="new-detail.html?id=${item.id}" class="video-thumb-frame horizontal-news-thumb sm:w-56 aspect-16-9 flex-shrink-0">
+                    <a href="new-detail.html?id=${item.id}&type=video" class="video-thumb-frame horizontal-news-thumb sm:w-56 aspect-16-9 flex-shrink-0">
                         <img src="${getThumb(item)}" alt="${item.title.replace(/"/g, '&quot;')}" loading="lazy">
                         <span class="video-play-icon" style="width:34px;height:34px;">
                             <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-0.5"><path d="M8 5v14l11-7z"/></svg>
@@ -1080,7 +1093,7 @@ function renderCategoryContent(items, catName) {
                         <div>
                             <span class="text-[11px] font-bold text-[#be1016] uppercase tracking-wider block mb-1">${item.sub_category || catName}</span>
                             <h3 class="text-base sm:text-[17px] font-bold text-gray-900 leading-snug mb-1.5 hover:text-[#be1016] font-playfair font-serif">
-                                <a href="new-detail.html?id=${item.id}">${item.title}</a>
+                                <a href="new-detail.html?id=${item.id}&type=video">${item.title}</a>
                             </h3>
                             <p class="text-sm text-gray-600 leading-relaxed line-clamp-2 font-roboto">${item.excerpt || item.title}</p>
                         </div>
@@ -1105,4 +1118,6 @@ function renderCategoryContent(items, catName) {
             `).join('');
         }
     }
+
+    routeVideoCards();
 }

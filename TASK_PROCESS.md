@@ -1,7 +1,7 @@
 # Tiến độ triển khai giao diện CMS View
 
 > Nguồn yêu cầu: `task.md`  
-> Cập nhật lần đầu: 09/10/2026  
+> Rà soát gần nhất: 12/10/2026
 > Cách dùng: đổi `- [ ]` thành `- [x]` khi hạng mục đã hoàn tất và được kiểm tra trên giao diện. Mục **Cần rà soát** là hạng mục đã có một phần triển khai nhưng chưa đáp ứng trọn vẹn yêu cầu, nên chưa tick.
 
 ## 1. Nền tảng thương hiệu
@@ -29,13 +29,13 @@
 - [ ] Ẩn danh mục con ở giao diện công khai và thêm cấu hình bật/tắt từ admin.
 - [ ] Tắt thanh **Tin nóng 24/7** ở giao diện công khai và thêm cấu hình bật/tắt từ admin.
 
-**Cần rà soát:** header hiện đã được dựng lại, nhưng menu con vẫn hiển thị dạng dropdown; tab vẫn là `VIDEO` và `TẠP CHÍ ẢNH`; nút đăng ký bản tin và thanh Tin nóng 24/7 vẫn đang xuất hiện.
+**Cần rà soát:** tab chính đã đổi thành `BẢN TIN`; nhãn Album trên trang chủ hiện bị gõ thành `ALBUMN ẢNH` nên chưa thể tick. Tin nóng đã được ẩn ở trang chủ nhưng vẫn còn ở các trang khác; newsletter vẫn đang hiển thị và chưa có cấu hình admin.
 
 ## 3. Trang chủ / nội dung giữa trang
 
 ### Bố cục và quảng cáo
 
-- [ ] Quy hoạch lại bố cục tổng thể theo cấu trúc yêu cầu bên dưới.
+- [x] Quy hoạch lại bố cục tổng thể theo cấu trúc yêu cầu bên dưới.
 - [x] Bỏ toàn bộ quảng cáo bên trái, chỉ giữ quảng cáo bên phải để mở rộng vùng nội dung chính.
 - [x] Đặt banner quảng cáo ngang giữa khối Top 10 và khối chuyên mục.
 - [ ] Bỏ quảng cáo ở cuối trang.
@@ -46,9 +46,9 @@
 ### Khối nội dung đầu trang
 
 - [x] Chia phần đầu thành ba khu: trái là **Tin đọc nhiều nhất** (theo khung ver3); giữa/phải là **Tiêu điểm bản tin** và **Bản tin mới nhất / Tin tức nhanh**.
-- [ ] Hiển thị Bản tin mới nhất theo dạng tin chữ hoặc tin ảnh, luôn có tiêu đề/nội dung chữ và thumbnail.
+- [x] Hiển thị Bản tin mới nhất theo dạng tin chữ hoặc tin ảnh, luôn có tiêu đề/nội dung chữ và thumbnail.
 - [ ] Với album ảnh trong Bản tin mới nhất, tự chuyển/lật qua các ảnh trong album.
-- [ ] Dùng ảnh phẳng cho Bản tin mới nhất, không có khung đen bao quanh ảnh.
+- [x] Dùng ảnh phẳng cho Bản tin mới nhất, không có khung đen bao quanh ảnh.
 - [ ] Đặt Tiêu điểm bản tin mặc định là video mới nhất.
 - [x] Làm slider cho Tiêu điểm bản tin: 5 bài, tự chuyển mỗi 3 giây, đồng thời đổi ảnh/video đại diện, tiêu đề và mô tả.
 - [x] Gộp **Tin tức nhanh** vào cùng một khối với **Bản tin mới nhất**.
@@ -65,7 +65,7 @@
 - [x] Chuẩn hóa tỷ lệ ảnh album là 3:2.
 - [ ] Tự resize/crop ảnh được đăng từ admin về kích thước hoặc pixel chuẩn.
 
-**Cần rà soát:** trang hiện có Tin đọc nhiều nhất, Tiêu điểm bản tin, Bản tin mới nhất/Tin tức nhanh, Dòng thời sự Top 10, banner ngang và Album ảnh. Các lưới dữ liệu hiện chưa đủ 9 bài cho từng chuyên mục; cần nối dữ liệu thực và hoàn thiện quy tắc lấy Top 10 theo lượt xem.
+**Cần rà soát:** trang hiện có đầy đủ khung Tin đọc nhiều nhất, Tiêu điểm, Bản tin mới, Dòng thời sự Top 10, 4 chuyên mục × 9 bài và Album 12 ảnh. Toàn bộ danh sách/slider hiện dùng dữ liệu mockup tĩnh; cần nối dữ liệu thực, trong đó Top 10 phải được xếp theo lượt xem.
 
 ## 4. Footer
 
@@ -79,12 +79,12 @@
 
 - [ ] Với tin video: ưu tiên video làm nội dung chính, giảm phần chữ.
 - [ ] Với tin text: ưu tiên phần nội dung chữ.
-- [ ] Tắt chức năng đọc AI ở cả tin video và tin text.
+- [x] Tắt chức năng đọc AI ở cả tin video và tin text.
 - [ ] Đổi **Dòng thời sự 24/7** thành **Top 10 tin quan tâm**, không hiển thị mốc thời gian.
-- [ ] Bỏ khối Top 10 ở cuối trang chi tiết.
-- [ ] Bỏ khối video quan tâm ở trang chi tiết.
+- [x] Bỏ khối Top 10 ở cuối trang chi tiết.
+- [x] Bỏ khối video quan tâm ở trang chi tiết.
 
-**Cần rà soát:** trang chi tiết hiện vẫn có nút “Nghe đọc bài”; cần tắt khi triển khai hạng mục này.
+**Cần rà soát:** nút “Nghe đọc bài” đã được comment/ẩn. Trang chi tiết mẫu hiện ưu tiên video, nhưng chưa có logic phân loại dữ liệu để tự đổi layout riêng cho tin video và tin text.
 
 ## 6. Hạng mục admin và kiểm thử chung
 
@@ -103,3 +103,4 @@
 | 09/10/2026 | Chuẩn hóa thumbnail dạng ảnh crop kín 3:2, không dùng thumbnail video có dải đen; đổi menu Video thành Bản tin trên các trang; Album ảnh hiển thị 12 bài, 6 cột × 2 hàng trên desktop. |
 | 09/10/2026 | Tinh chỉnh khối đầu trang: Bản tin mới không còn nền/border đen; Tiêu điểm có vùng ảnh, tiêu đề, mô tả và tin liên quan cố định để slider không làm nhảy bố cục; Dòng thời sự bỏ thời gian, trạng thái cập nhật và các đường kẻ đen. |
 | 09/10/2026 | Bỏ các đường phân cách đen ở vùng nội dung và Album ảnh; chuyển Bản tin mới thành tin ảnh/chữ không có icon video, tiêu đề ba dòng; căn cố định cột nhãn của Top 10 để toàn bộ hàng thẳng nhau. |
+| 12/10/2026 | Rà soát lại toàn bộ tiến độ theo mã hiện tại; tick các hạng mục đã xác nhận và ghi rõ phần còn thiếu là dữ liệu thực, cấu hình admin hoặc logic phân loại bài viết. |

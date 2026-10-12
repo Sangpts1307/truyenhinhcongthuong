@@ -127,11 +127,11 @@
       const articleId = category.start + itemIndex;
       const image = categoryImages[(itemIndex + index * 3) % categoryImages.length];
       return `<article class="uniform-category-card">
-        <a href="new-detail.html?id=${articleId}" class="uniform-category-image">
+        <a href="new-detail.html?id=${articleId}&type=video" class="uniform-category-image">
           <img src="${image}" alt="${title}" loading="lazy">
           <span class="uniform-category-play" aria-hidden="true">▶</span>
         </a>
-        <h3><a href="new-detail.html?id=${articleId}">${title}</a></h3>
+        <h3><a href="new-detail.html?id=${articleId}&type=video">${title}</a></h3>
       </article>`;
     }).join('');
     return `<section class="uniform-category-section" aria-label="Chuyên mục ${category.name}">
@@ -142,8 +142,8 @@
 
   function renderAlbums() {
     const cards = albums.map(([title, image], index) => `<article class="album-card">
-      <a href="new-detail.html?id=${index + 1}" class="album-image"><img src="${image}" alt="${title}" loading="lazy"><span>${index + 6} ẢNH</span></a>
-      <h3><a href="new-detail.html?id=${index + 1}">${title}</a></h3>
+      <a href="new-detail.html?type=album&album=${index + 1}" class="album-image"><img src="${image}" alt="${title}" loading="lazy"><span>${index + 6} ẢNH</span></a>
+      <h3><a href="new-detail.html?type=album&album=${index + 1}">${title}</a></h3>
     </article>`).join('');
     return `<div class="uniform-section-heading album-heading"><h2><a href="category-detail.html?cat=tap-chi-anh">Album ảnh</a></h2><a href="category-detail.html?cat=tap-chi-anh" class="uniform-section-more">Xem tất cả →</a></div><div class="album-grid">${cards}</div>`;
   }
