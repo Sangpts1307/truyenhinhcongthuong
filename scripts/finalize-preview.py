@@ -13,7 +13,7 @@ fallbacks = []
 root = Path(__file__).resolve().parent.parent
 source = root.parent / 'cms-news'
 for source_folder, target_folder in [('public/assets', 'assets'), ('public/build', 'build'), ('storage/app/public', 'storage')]:
-    shutil.copytree(source / source_folder, root / target_folder, dirs_exist_ok=True)
+    shutil.copytree(source / source_folder, root / target_folder, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.gitignore', '.DS_Store'))
 pages = [root / 'index.html', *root.glob('bai-viet/**/*.html'), *root.glob('chuyen-muc/**/*.html'), *root.glob('video/**/*.html'), *root.glob('album-anh/**/*.html'), *root.glob('tim-kiem/**/*.html')]
 urls = set()
 for page in pages:

@@ -1,2 +1,2 @@
-*
-!.gitignore
+# Public preview media must be included in Git deployments.
+.DS_Store
