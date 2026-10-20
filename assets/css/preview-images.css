@@ -1,0 +1,36 @@
+/* Editorial photos fill their frames; branding and advertisements retain their own sizing. */
+.spotlight-related-thumb,
+.legacy-category-card__thumbnail,
+.video-thumb-frame,
+.img-frame-16-9,
+.aspect-16-9,
+.highlight-thumb {
+    overflow: hidden;
+}
+.spotlight-related-thumb img,
+.legacy-category-card__thumbnail img,
+.video-thumb-frame img,
+.img-frame-16-9 img,
+.aspect-16-9 img,
+.highlight-thumb img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+.article-hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+}
+.article-body img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}

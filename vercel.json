@@ -1,8 +1,28 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
   "rewrites": [
     {
-      "source": "/",
-      "destination": "/homepage.html"
+      "source": "/homepage.html",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/search.html",
+      "destination": "/tim-kiem/index.html"
     }
-  ]
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": null
 }

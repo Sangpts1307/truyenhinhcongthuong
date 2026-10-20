@@ -1,0 +1,12 @@
+{
+  "name": "cong-thuong-preview",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "export": "php scripts/export-preview.php && python3 scripts/finalize-preview.py && python3 scripts/normalize-images.py",
+    "images:fit": "python3 scripts/normalize-images.py"
+  }
+}
